@@ -2,7 +2,13 @@ import * as S from './styles'
 
 const Logo = () => (
   <S.Wrapper>
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 131 30">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 131 30"
+      role="img"
+      aria-label="Deputado Jeferson Fernandes"
+    >
       <g fillRule="evenodd" clipPath="url(#a)" clipRule="evenodd">
         <path
           fill="#F2F2F2"
