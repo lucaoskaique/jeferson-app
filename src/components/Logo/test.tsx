@@ -4,13 +4,6 @@ import { renderWithTheme } from 'utils/tests/helpers'
 import Logo from '.'
 
 describe('<Logo />', () => {
-  it('should render the Logo', () => {
-    renderWithTheme(<Logo />)
-    expect(
-      screen.getByLabelText(/Deputado Jeferson Fernandes/i)
-    ).toMatchSnapshot()
-  })
-
   it('should render a normal default Logo', () => {
     renderWithTheme(<Logo />)
     expect(
