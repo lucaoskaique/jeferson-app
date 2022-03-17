@@ -1,13 +1,26 @@
-import { render, screen } from '@testing-library/react'
+import { fireEvent, screen } from '@testing-library/react'
+import { renderWithTheme } from 'utils/tests/helpers'
 
 import Menu from '.'
 
 describe('<Menu />', () => {
-  it('should render the heading', () => {
-    const { container } = render(<Menu />)
+  it('should render the menu', () => {
+    renderWithTheme(<Menu />)
 
-    expect(screen.getByRole('heading', { name: /Menu/i })).toBeInTheDocument()
+    expect(screen.getByLabelText(/open menu/i)).toBeInTheDocument()
+    expect(
+      screen.getByRole('img', { name: /Deputado Jeferson Fernandes/i })
+    ).toBeInTheDocument()
+  })
 
-    expect(container.firstChild).toMatchSnapshot()
+  it('should render the open/close mobile menu', () => {
+    renderWithTheme(<Menu />)
+    const fullMenuElement = screen.getByRole('navigation', { hidden: true })
+
+    expect(fullMenuElement.getAttribute('aria-hidden')).toBe('true')
+    expect(fullMenuElement).toHaveStyle({ opacity: 0 })
+
+    fireEvent.click(screen.getByLabelText(/open menu/i))
+    expect(fullMenuElement.getAttribute('aria-hidden')).toBe('false')
   })
 })
