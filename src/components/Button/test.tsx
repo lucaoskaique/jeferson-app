@@ -58,4 +58,11 @@ describe('<Button />', () => {
       'font-size': '1.2rem'
     })
   })
+
+  it('should render a Button with font-weight bold', () => {
+    renderWithTheme(<Button fontWeight>Button</Button>)
+    expect(screen.getByRole('button', { name: /Button/i })).toHaveStyle({
+      'font-weight': '600'
+    })
+  })
 })

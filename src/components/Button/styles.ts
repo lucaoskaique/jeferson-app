@@ -2,7 +2,7 @@ import styled, { css, DefaultTheme } from 'styled-components'
 
 import { ButtonProps } from '.'
 
-type WrapperProps = Pick<ButtonProps, 'size' | 'background'>
+type WrapperProps = Pick<ButtonProps, 'size' | 'background' | 'fontWeight'>
 
 const wrapperModifiers = {
   xlarge: (theme: DefaultTheme) => css`
@@ -29,11 +29,14 @@ const wrapperModifiers = {
   `,
   hot: () => css`
     background: linear-gradient(90deg, #ffbf3a -40%, #d90726 185.31%);
+  `,
+  fontWeight: (theme: DefaultTheme) => css`
+    font-weight: ${theme.font.bold};
   `
 }
 
 export const Wrapper = styled.button<WrapperProps>`
-  ${({ theme, size, background }) => css`
+  ${({ theme, size, background, fontWeight }) => css`
     color: ${theme.colors.white};
     border: 0;
     border-radius: ${theme.border.radius};
@@ -41,5 +44,6 @@ export const Wrapper = styled.button<WrapperProps>`
 
     ${!!size && wrapperModifiers[size](theme)}
     ${!!background && wrapperModifiers[background]}
+    ${!!fontWeight && wrapperModifiers.fontWeight(theme)}
   `}
 `
