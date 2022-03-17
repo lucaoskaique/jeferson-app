@@ -4,7 +4,7 @@ import { ButtonProps } from '.'
 
 type WrapperProps = {
   hasIcon: boolean
-} & Pick<ButtonProps, 'size' | 'background' | 'fontWeight' | 'fullWidth'>
+} & Pick<ButtonProps, 'size' | 'background' | 'fullWidth'>
 
 const wrapperModifiers = {
   xlarge: (theme: DefaultTheme) => css`
@@ -32,9 +32,6 @@ const wrapperModifiers = {
   hot: () => css`
     background: linear-gradient(90deg, #ffbf3a -40%, #d90726 185.31%);
   `,
-  fontWeight: (theme: DefaultTheme) => css`
-    font-weight: ${theme.font.bold};
-  `,
   withIcon: (theme: DefaultTheme) => css`
     svg {
       width: 3rem;
@@ -46,10 +43,13 @@ const wrapperModifiers = {
   fullWidth: () => css`
     width: 100%;
   `
+  // fontWeight: (theme: DefaultTheme) => css`
+  //   font-weight: ${theme.font.bold};
+  // `
 }
 
 export const Wrapper = styled.button<WrapperProps>`
-  ${({ theme, size, fullWidth, background, fontWeight, hasIcon }) => css`
+  ${({ theme, size, fullWidth, background, hasIcon }) => css`
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -60,10 +60,10 @@ export const Wrapper = styled.button<WrapperProps>`
     border-radius: ${theme.border.radius};
     padding: ${theme.spacings.xxsmall};
     text-decoration: none;
+    font-weight: ${theme.font.bold};
 
     ${!!size && wrapperModifiers[size](theme)}
     ${!!background && wrapperModifiers[background]}
-    ${!!fontWeight && wrapperModifiers.fontWeight(theme)}
     ${!!hasIcon && wrapperModifiers.withIcon(theme)}
     ${!!fullWidth && wrapperModifiers.fullWidth()};
   `}

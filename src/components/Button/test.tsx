@@ -65,7 +65,7 @@ describe('<Button />', () => {
   })
 
   it('should render a Button with font-weight bold', () => {
-    renderWithTheme(<Button fontWeight>Button</Button>)
+    renderWithTheme(<Button>Button</Button>)
     expect(screen.getByRole('button', { name: /Button/i })).toHaveStyle({
       'font-weight': '600'
     })
@@ -77,5 +77,12 @@ describe('<Button />', () => {
     )
     expect(screen.getByText(/Button/i)).toBeInTheDocument()
     expect(screen.getByTestId('icon')).toBeInTheDocument()
+  })
+
+  it('should render a fullWidth version', () => {
+    renderWithTheme(<Button fullWidth>Button</Button>)
+    expect(screen.getByRole('button', { name: /Button/i })).toHaveStyle({
+      width: '100%'
+    })
   })
 })

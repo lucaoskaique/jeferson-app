@@ -11,8 +11,6 @@ import * as S from './styles'
 
 const Menu = () => {
   const [isOpen, setIsOpen] = useState(false)
-
-  console.log(isOpen)
   return (
     <S.Wrapper isOpen={isOpen}>
       <S.LogoWrapper>

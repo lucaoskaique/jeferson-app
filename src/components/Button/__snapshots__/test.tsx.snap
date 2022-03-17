@@ -24,11 +24,11 @@ exports[
   padding: 0.8rem;
   -webkit-text-decoration: none;
   text-decoration: none;
+  font-weight: 600;
   height: 5rem;
   font-size: 1.6rem;
   padding: 0.8rem 4.8rem;
   background: linear-gradient(90deg,#ffbf3a -40%,#d90726 185.31%);
-  font-weight: 600;
 }
 
 <button

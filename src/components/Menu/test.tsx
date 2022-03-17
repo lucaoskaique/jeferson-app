@@ -23,4 +23,10 @@ describe('<Menu />', () => {
     fireEvent.click(screen.getByLabelText(/open menu/i))
     expect(fullMenuElement.getAttribute('aria-hidden')).toBe('false')
   })
+
+  it('should render register box mobile menu', () => {
+    renderWithTheme(<Menu />)
+
+    expect(screen.getByText(/Admin/i)).toBeInTheDocument()
+  })
 })
