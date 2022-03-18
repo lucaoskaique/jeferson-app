@@ -7,11 +7,12 @@ type ButtonTypes =
   | ButtonHTMLAttributes<HTMLButtonElement>
 
 export type ButtonProps = {
-  background?: 'hot' | 'ice'
+  background?: 'hot' | 'ice' | 'white'
   size?: 'xlarge' | 'large' | 'medium' | 'small'
   icon?: React.ReactNode
   fullWidth?: boolean
   fontWeight?: boolean
+  textColor?: 'primary' | 'secondary' | 'white' | 'black'
   as?: React.ElementType
 } & ButtonTypes
 
@@ -22,6 +23,7 @@ const Button: React.ForwardRefRenderFunction<S.WrapperProps, ButtonProps> = (
     background = 'hot',
     fullWidth = false,
     icon,
+    textColor,
     ...props
   },
   ref
@@ -32,6 +34,7 @@ const Button: React.ForwardRefRenderFunction<S.WrapperProps, ButtonProps> = (
     fullWidth={fullWidth}
     hasIcon={!!icon}
     ref={ref}
+    textColor={textColor}
     {...props}
   >
     {!!icon && icon}
