@@ -8,3 +8,6 @@ export default {
 } as Meta
 
 export const Default: Story = () => <Footer />
+Default.parameters = {
+  layout: 'fullscreen'
+}

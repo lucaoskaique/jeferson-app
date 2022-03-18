@@ -2,7 +2,7 @@ import * as S from './styles'
 
 export type HeadingProps = {
   children: React.ReactNode
-  color?: 'primary' | 'secondary'
+  color?: 'primary' | 'secondary' | 'white'
   size?: 'small' | 'medium'
 }
 
