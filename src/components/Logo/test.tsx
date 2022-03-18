@@ -21,4 +21,31 @@ describe('<Logo />', () => {
       width: '13.1rem'
     })
   })
+
+  it('should render a large Logo', () => {
+    renderWithTheme(<Logo size="large" />)
+    expect(
+      screen.getByLabelText(/Deputado Jeferson Fernandes/i).parentElement
+    ).toHaveStyle({
+      width: '37rem'
+    })
+  })
+
+  it('should render a xlarge Logo', () => {
+    renderWithTheme(<Logo size="xlarge" />)
+    expect(
+      screen.getByLabelText(/Deputado Jeferson Fernandes/i).parentElement
+    ).toHaveStyle({
+      width: '67rem'
+    })
+  })
+
+  it('should render a xlarge Logo', () => {
+    renderWithTheme(<Logo color={true} />)
+    expect(
+      screen.getByLabelText(/Deputado Jeferson Fernandes2/i).parentElement
+    ).toHaveStyle({
+      width: '17rem'
+    })
+  })
 })
