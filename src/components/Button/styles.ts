@@ -28,9 +28,15 @@ const wrapperModifiers = {
   `,
   ice: () => css`
     background: linear-gradient(90deg, #72c042 -99.98%, #0092d3 193.73%);
+    &:hover {
+      background: linear-gradient(90deg, #ffbf3a -40%, #d90726 185.31%);
+    }
   `,
   hot: () => css`
     background: linear-gradient(90deg, #ffbf3a -40%, #d90726 185.31%);
+    &:hover {
+      background: linear-gradient(90deg, #72c042 -99.98%, #0092d3 193.73%);
+    }
   `,
   withIcon: (theme: DefaultTheme) => css`
     svg {

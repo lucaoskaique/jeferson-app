@@ -7,7 +7,6 @@ type ButtonTypes =
   | ButtonHTMLAttributes<HTMLButtonElement>
 
 export type ButtonProps = {
-  children?: React.ReactNode
   background?: 'hot' | 'ice'
   size?: 'xlarge' | 'large' | 'medium' | 'small'
   icon?: React.ReactNode
