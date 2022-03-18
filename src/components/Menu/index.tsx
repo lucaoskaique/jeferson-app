@@ -1,4 +1,7 @@
 import { CaretDownFill } from '@styled-icons/bootstrap/CaretDownFill'
+import { FacebookWithCircle as FacebookIcon } from '@styled-icons/entypo-social/FacebookWithCircle'
+import { InstagramWithCircle as InstagramIcon } from '@styled-icons/entypo-social/InstagramWithCircle'
+import { TwitterWithCircle as TwitterIcon } from '@styled-icons/entypo-social/TwitterWithCircle'
 import { Close as CloseIcon } from '@styled-icons/material-outlined/Close'
 import { Menu as MenuIcon } from '@styled-icons/material-sharp/Menu'
 import Button from 'components/Button'
@@ -27,16 +30,14 @@ const Menu = () => {
         </S.IconWrapper>
       </MediaMatch>
 
-      {/* <MediaMatch greaterThan="medium">
+      <MediaMatch greaterThan="medium">
         <S.MenuNav>
           <Link href="/" passHref>
             <S.MenuLink>
-              <S.MenuLinkWrapper>
-                Conheça o Jeferson
-                <span>
-                  <CaretDownFill height={15} width={15} />
-                </span>
-              </S.MenuLinkWrapper>
+              Conheça o Jeferson
+              <span>
+                <CaretDownFill height={15} width={15} />
+              </span>
             </S.MenuLink>
           </Link>
           <Link href="/games" passHref>
@@ -49,7 +50,40 @@ const Menu = () => {
             <S.MenuLink>Contato</S.MenuLink>
           </Link>
         </S.MenuNav>
-      </MediaMatch> */}
+      </MediaMatch>
+
+      <MediaMatch greaterThan="medium">
+        <S.MenuGroup>
+          <S.IconWrapper>
+            <Link href="/cart">
+              <a>
+                <FacebookIcon aria-label="facebook" />
+              </a>
+            </Link>
+          </S.IconWrapper>
+          <S.IconWrapper>
+            <Link href="/cart">
+              <a>
+                <InstagramIcon />
+              </a>
+            </Link>
+          </S.IconWrapper>
+          <S.IconWrapper>
+            <Link href="/cart">
+              <a>
+                <TwitterIcon />
+              </a>
+            </Link>
+          </S.IconWrapper>
+          <MediaMatch greaterThan="medium">
+            <Link href="/sign-in" passHref>
+              <Button size="small" background="ice">
+                Sign in
+              </Button>
+            </Link>
+          </MediaMatch>
+        </S.MenuGroup>
+      </MediaMatch>
 
       <S.MenuFull aria-hidden={!isOpen} isOpen={isOpen}>
         <CloseIcon aria-label="Close Menu" onClick={() => setIsOpen(false)} />

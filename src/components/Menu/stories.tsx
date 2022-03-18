@@ -10,9 +10,6 @@ export default {
 export const Default: Story = () => <Menu />
 
 Default.parameters = {
-  viewport: {
-    defaultViewport: 'mobile1'
-  },
   layout: 'fullscreen',
   backgrounds: { default: 'black' }
 }

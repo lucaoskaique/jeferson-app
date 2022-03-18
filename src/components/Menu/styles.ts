@@ -7,7 +7,6 @@ export const Wrapper = styled.menu<MenuFullProps>`
     align-items: center;
     justify-content: space-between;
     padding: ${theme.spacings.small} 0;
-    position: relative;
     z-index: ${isOpen ? theme.layers.menu : `calc(${theme.layers.menu} - 1)`};
   `}
 `
@@ -18,6 +17,10 @@ export const IconWrapper = styled.div`
     cursor: pointer;
     width: 3rem;
     height: 3rem;
+
+    > a {
+      color: ${theme.colors.secondary};
+    }
   `}
 `
 
@@ -89,7 +92,7 @@ export const MenuNav = styled.div`
 export const MenuLink = styled.a`
   ${({ theme }) => css`
     position: relative;
-    color: ${theme.colors.white};
+    color: ${theme.colors.secondary};
     font-size: ${theme.font.sizes.medium};
     margin: 0.3rem ${theme.spacings.small} 0;
     text-decoration: none;
@@ -113,6 +116,9 @@ export const MenuLink = styled.a`
           left: 0;
         }
       }
+    }
+    > span {
+      margin-left: 1rem;
     }
   `}
 `
@@ -138,6 +144,18 @@ export const MenuLinkWrapper = styled.div`
     > span {
       color: ${theme.colors.secondary};
       margin-left: 1rem;
+    }
+  `}
+`
+export const MenuGroup = styled.div`
+  ${({ theme }) => css`
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1;
+    align-items: center;
+    z-index: ${theme.layers.menu} + 1;
+    > div {
+      margin-left: ${theme.spacings.xsmall};
     }
   `}
 `

@@ -2648,6 +2648,14 @@
     "@babel/runtime" "^7.14.0"
     "@styled-icons/styled-icon" "^10.6.3"
 
+"@styled-icons/entypo-social@^10.34.0":
+  version "10.34.0"
+  resolved "https://registry.yarnpkg.com/@styled-icons/entypo-social/-/entypo-social-10.34.0.tgz#f2a719cd5811adb4b72b09b7614009a9c5d187e4"
+  integrity sha512-amhrYcc/buvTJrunRnYNeFNJ5Ru1ByV/pcICj7An9TF/NNC4exfnzaoUzOJNcMGOHU5jphrqjSosC4pQNJKqkA==
+  dependencies:
+    "@babel/runtime" "^7.14.0"
+    "@styled-icons/styled-icon" "^10.6.3"
+
 "@styled-icons/material-outlined@^10.34.0":
   version "10.34.0"
   resolved "https://registry.yarnpkg.com/@styled-icons/material-outlined/-/material-outlined-10.34.0.tgz#5da422bc14dbc0ad0b4e7e15153056866f42f37b"
