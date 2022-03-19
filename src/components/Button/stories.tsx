@@ -13,13 +13,15 @@ export default {
     size: {
       control: {
         type: 'select',
-        options: ['small', 'medium', 'large']
+        options: ['small', 'medium', 'large'],
+        control: { type: 'radio' }
       }
     },
     background: {
       control: {
         type: 'select',
-        options: ['hot', 'ice']
+        options: ['hot', 'ice'],
+        control: { type: 'radio' }
       }
     }
   }
