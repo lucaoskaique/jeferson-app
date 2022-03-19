@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components'
 
 export const Wrapper = styled.article`
   ${({ theme }) => css`
+    position: relative;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -14,7 +15,8 @@ export const Wrapper = styled.article`
 `
 
 export const ImageBox = styled.a`
-  height: 22rem;
+  min-height: 22rem;
+  position: relative;
   width: 100%;
   background: #f6f7f8;
   background-image: linear-gradient(
@@ -57,6 +59,7 @@ export const Info = styled.a`
   max-width: calc(100% - 1rem);
   text-decoration: none;
 `
+
 export const Title = styled.h3`
   ${({ theme }) => css`
     text-transform: uppercase;
@@ -66,6 +69,7 @@ export const Title = styled.h3`
     color: ${theme.colors.secondary};
   `}
 `
+
 export const Description = styled.h4`
   ${({ theme }) => css`
     font-size: ${theme.font.sizes.small};
