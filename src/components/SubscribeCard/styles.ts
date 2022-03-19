@@ -6,13 +6,16 @@ export const Wrapper = styled.main`
     border-radius: ${theme.border.radius};
     padding: ${theme.spacings.xsmall};
     display: grid;
-    height: 29.7rem;
   `}
 `
 export const Content = styled.div`
   ${({ theme }) => css`
+    display: flex;
+    flex-direction: column;
     text-align: center;
-    padding: ${theme.spacings.xsmall};
+    align-items: center;
+    justify-content: space-between;
+    padding: ${theme.spacings.small};
   `}
 `
 

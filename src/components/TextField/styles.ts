@@ -11,7 +11,7 @@ export const InputWrapper = styled.div`
     display: flex;
     align-items: center;
     background: ${theme.colors.lightGray};
-    border-radius: 0.2rem;
+    border-radius: 1rem;
     padding: 0 ${theme.spacings.xsmall};
     border: 0.2rem solid;
     border-color: ${theme.colors.lightGray};

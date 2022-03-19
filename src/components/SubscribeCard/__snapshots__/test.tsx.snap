@@ -1,7 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<SubscribeCard /> should render the heading 1`] = `
-.c4 {
+.c6 {
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+}
+
+.c8 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -27,8 +33,67 @@ exports[`<SubscribeCard /> should render the heading 1`] = `
   background: '#FAFAFA';
 }
 
-.c4:hover {
+.c8:hover {
   background: linear-gradient(90deg,#72c042 -99.98%,#0092d3 193.73%);
+}
+
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #EAEAEA;
+  border-radius: 1rem;
+  padding: 0 1.6rem;
+  border: 0.2rem solid;
+  border-color: #EAEAEA;
+}
+
+.c4:focus-within {
+  box-shadow: 0 0 0.5rem #EC6330;
+}
+
+.c7 {
+  color: #030517;
+  font-family: Poppins,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif;
+  font-size: 1.6rem;
+  padding: 0.8rem 0;
+  padding-left: 1.6rem;
+  background: transparent;
+  border: 0;
+  outline: none;
+  width: 100%;
+}
+
+.c7:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 2.4rem #EAEAEA inset;
+  -webkit-filter: none;
+  filter: none;
+}
+
+.c7:-webkit-autofill::first-line {
+  font-family: Poppins,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif;
+  font-size: 1.6rem;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  color: #8F8F8F;
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+}
+
+.c5 > svg {
+  width: 2.2rem;
+  height: 100%;
 }
 
 .c0 {
@@ -36,12 +101,26 @@ exports[`<SubscribeCard /> should render the heading 1`] = `
   border-radius: 0.4rem;
   padding: 1.6rem;
   display: grid;
-  height: 29.7rem;
 }
 
 .c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   text-align: center;
-  padding: 1.6rem;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 2.4rem;
 }
 
 .c2 {
@@ -73,14 +152,153 @@ exports[`<SubscribeCard /> should render the heading 1`] = `
     >
       Fique por dentro de notícias e novidades
     </div>
-    <div>
-      <input />
-      <input />
-      <input />
-      <input />
+    <div
+      class=""
+    >
+      <div
+        class="c4"
+      >
+        <div
+          class="c5"
+        >
+          <svg
+            aria-hidden="true"
+            class="c6"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect
+              fill="none"
+              height="24"
+              width="24"
+            />
+            <polygon
+              points="15,16 11,20 21,20 21,16"
+            />
+            <path
+              d="M12.06 7.19L3 16.25V20h3.75l9.06-9.06-3.75-3.75zM5.92 18H5v-.92l7.06-7.06.92.92L5.92 18zM18.71 8.04a.996.996 0 000-1.41l-2.34-2.34a1.001 1.001 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
+            />
+          </svg>
+        </div>
+        <input
+          class="c7"
+          name="name"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+    <div
+      class=""
+    >
+      <div
+        class="c4"
+      >
+        <div
+          class="c5"
+        >
+          <svg
+            aria-hidden="true"
+            class="c6"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 0h24v24H0V0z"
+              fill="none"
+            />
+            <path
+              d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zM7 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 2.88-2.88 7.19-5 9.88C9.92 16.21 7 11.85 7 9z"
+            />
+            <circle
+              cx="12"
+              cy="9"
+              r="2.5"
+            />
+          </svg>
+        </div>
+        <input
+          class="c7"
+          name="cidade"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+    <div
+      class=""
+    >
+      <div
+        class="c4"
+      >
+        <div
+          class="c5"
+        >
+          <svg
+            aria-hidden="true"
+            class="c6"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 0h24v24H0V0z"
+              fill="none"
+            />
+            <path
+              d="M6.54 5c.06.89.21 1.76.45 2.59l-1.2 1.2c-.41-1.2-.67-2.47-.76-3.79h1.51m9.86 12.02c.85.24 1.72.39 2.6.45v1.49c-1.32-.09-2.59-.35-3.8-.75l1.2-1.19M7.5 3H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.49c0-.55-.45-1-1-1-1.24 0-2.45-.2-3.57-.57a.84.84 0 00-.31-.05c-.26 0-.51.1-.71.29l-2.2 2.2a15.149 15.149 0 01-6.59-6.59l2.2-2.2c.28-.28.36-.67.25-1.02A11.36 11.36 0 018.5 4c0-.55-.45-1-1-1z"
+            />
+          </svg>
+        </div>
+        <input
+          class="c7"
+          name="celular"
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+    <div
+      class=""
+    >
+      <div
+        class="c4"
+      >
+        <div
+          class="c5"
+        >
+          <svg
+            aria-hidden="true"
+            class="c6"
+            fill="currentColor"
+            focusable="false"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 0h24v24H0V0z"
+              fill="none"
+            />
+            <path
+              d="M12 1.95c-5.52 0-10 4.48-10 10s4.48 10 10 10h5v-2h-5c-4.34 0-8-3.66-8-8s3.66-8 8-8 8 3.66 8 8v1.43c0 .79-.71 1.57-1.5 1.57s-1.5-.78-1.5-1.57v-1.43c0-2.76-2.24-5-5-5s-5 2.24-5 5 2.24 5 5 5c1.38 0 2.64-.56 3.54-1.47.65.89 1.77 1.47 2.96 1.47 1.97 0 3.5-1.6 3.5-3.57v-1.43c0-5.52-4.48-10-10-10zm0 13c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"
+            />
+          </svg>
+        </div>
+        <input
+          class="c7"
+          name="E-mail"
+          type="text"
+          value=""
+        />
+      </div>
     </div>
     <button
-      class="c4"
+      class="c8"
     >
       <span>
         enviar
