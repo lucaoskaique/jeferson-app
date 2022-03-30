@@ -1,10 +1,37 @@
 import { Story, Meta } from '@storybook/react'
+import { Email } from '@styled-icons/material-outlined'
 
-import TextField from '.'
+import TextField, { TextFieldProps } from '.'
 
 export default {
-  title: 'TextField',
-  component: TextField
-} as Meta
+  title: 'Form/TextField',
+  component: TextField,
+  args: {
+    label: 'E-mail',
+    name: 'email',
+    icon: <Email />,
+    initialValue: '',
+    placeholder: 'john.cage@gmail.com',
+    disabled: false
+  },
+  argTypes: {
+    onInput: { action: 'changed' },
+    icon: { type: '' }
+  }
+} as Meta<TextFieldProps>
 
-export const Default: Story = () => <TextField />
+export const Default: Story<TextFieldProps> = (args) => (
+  <div style={{ maxWidth: 300, padding: 15 }}>
+    <TextField {...args} />
+  </div>
+)
+
+export const withError: Story<TextFieldProps> = (args) => (
+  <div style={{ maxWidth: 300, padding: 15 }}>
+    <TextField {...args} />
+  </div>
+)
+
+withError.args = {
+  error: 'Ops...something is wrong'
+}

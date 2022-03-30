@@ -10,11 +10,12 @@ export const InputWrapper = styled.div`
   ${({ theme }) => css`
     display: flex;
     align-items: center;
-    background: ${theme.colors.lightGray};
+    background: ${theme.colors.white};
     border-radius: 1rem;
     padding: 0 ${theme.spacings.xsmall};
     border: 0.2rem solid;
     border-color: ${theme.colors.lightGray};
+
     &:focus-within {
       box-shadow: 0 0 0.5rem ${theme.colors.primary};
     }
@@ -66,7 +67,7 @@ export const Icon = styled.div<IconPositionProps>`
 
 export const Error = styled.p`
   ${({ theme }) => css`
-    color: ${theme.colors.white};
+    color: ${theme.colors.red};
     font-size: ${theme.font.sizes.xsmall};
   `}
 `
@@ -74,11 +75,11 @@ export const Error = styled.p`
 const wrapperModifiers = {
   error: (theme: DefaultTheme) => css`
     ${InputWrapper} {
-      border-color: ${theme.colors.white};
+      border-color: ${theme.colors.red};
     }
     ${Icon},
     ${Label} {
-      color: ${theme.colors.white};
+      color: ${theme.colors.red} !important;
     }
   `,
   disabled: (theme: DefaultTheme) => css`
