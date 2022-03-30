@@ -70,6 +70,10 @@ export const Wrapper = styled.button<WrapperProps>`
     text-decoration: none;
     font-weight: ${theme.font.bold};
 
+    &:focus {
+      outline: 1px dashed;
+    }
+
     ${!!size && wrapperModifiers[size](theme)}
     ${!!background && wrapperModifiers[background]}
     ${!!hasIcon && wrapperModifiers.withIcon(theme)}

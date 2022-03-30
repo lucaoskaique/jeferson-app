@@ -25,7 +25,7 @@ export default {
   colors: {
     primary: '#EC6330',
     secondary: '#29A29E',
-    mainBg: '#E5E5E5',
+    mainBg: '#FFFFFF',
     white: '#FAFAFA',
     black: '#030517',
     lightGray: '#EAEAEA',
@@ -48,4 +48,4 @@ export default {
     modal: 40,
     alwaysOnTop: 50
   }
-}
+} as const

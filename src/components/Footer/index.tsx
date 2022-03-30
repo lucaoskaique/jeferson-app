@@ -2,7 +2,7 @@ import { FacebookWithCircle as FacebookIcon } from '@styled-icons/entypo-social/
 import { InstagramWithCircle as InstagramIcon } from '@styled-icons/entypo-social/InstagramWithCircle'
 import { TwitterWithCircle as TwitterIcon } from '@styled-icons/entypo-social/TwitterWithCircle'
 import Heading from 'components/Heading'
-import Logo from 'components/Logo'
+import Logo2 from 'components/Logo2'
 import Link from 'next/link'
 
 import * as S from './styles'
@@ -12,7 +12,7 @@ const Footer = () => (
     <S.Content>
       <S.Column>
         <S.LogoWrapper>
-          <Logo color={true} size="large" />
+          <Logo2 size="normal" />
         </S.LogoWrapper>
         <S.MenuGroup>
           <S.IconWrapper>

@@ -7,7 +7,7 @@ const props = {
   img: 'https://source.unsplash.com/user/willianjusten/300x140'
 }
 describe('<VideoCard />', () => {
-  it('should render the heading', () => {
+  it('should render the image', () => {
     renderWithTheme(<VideoCard {...props} />)
 
     expect(screen.getByRole('img', { name: props.title })).toBeInTheDocument()

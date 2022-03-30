@@ -1,0 +1,286 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<About /> should render the heading 1`] = `
+.c10 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  color: #FAFAFA;
+  border: 0;
+  cursor: pointer;
+  font-family: Poppins,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif;
+  border-radius: 0.4rem;
+  padding: 0.8rem;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-weight: 600;
+  height: 5rem;
+  font-size: 1.6rem;
+  padding: 0.8rem 4.8rem;
+  background: linear-gradient(90deg,#ffbf3a -40%,#d90726 185.31%);
+  width: 100%;
+}
+
+.c10:focus {
+  outline: 1px dashed;
+}
+
+.c10:hover {
+  background: linear-gradient(90deg,#72c042 -99.98%,#0092d3 193.73%);
+}
+
+.c11 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  color: #FAFAFA;
+  border: 0;
+  cursor: pointer;
+  font-family: Poppins,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif;
+  border-radius: 0.4rem;
+  padding: 0.8rem;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  font-weight: 600;
+  height: 5rem;
+  font-size: 1.6rem;
+  padding: 0.8rem 4.8rem;
+  background: linear-gradient(90deg,#72c042 -99.98%,#0092d3 193.73%);
+  width: 100%;
+}
+
+.c11:focus {
+  outline: 1px dashed;
+}
+
+.c11:hover {
+  background: linear-gradient(90deg,#ffbf3a -40%,#d90726 185.31%);
+}
+
+.c7 {
+  color: #29A29E;
+  font-size: 2.0rem;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: #FAFAFA;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 0.4rem 0.5rem 0 rgba(0,0,0,0.2);
+}
+
+.c4 {
+  height: 42rem;
+  width: 100%;
+  background: #f6f7f8;
+  background-image: linear-gradient( to right,#f6f7f8 0%,#edeef1 20%,#f6f7f8 40%,#f6f7f8 100% );
+  background-size: 80rem 25rem;
+  -webkit-animation: placeholderShimmer 1s linear infinite forwards;
+  animation: placeholderShimmer 1s linear infinite forwards;
+}
+
+.c4 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.c0 {
+  margin-bottom: 3.2rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.c1 {
+  margin-top: 3.2rem;
+}
+
+.c2 {
+  width: 100%;
+  height: 22rem;
+}
+
+.c5 {
+  display: inline-block;
+  width: calc(100% - 1);
+  word-break: break-word;
+  margin-left: 0;
+  margin-bottom: 3.2rem;
+}
+
+.c6 {
+  text-align: center;
+}
+
+.c8 {
+  text-align: justify;
+  text-justify: inter-word;
+  margin-top: 1.6rem;
+}
+
+.c9 > button {
+  margin-bottom: 1.6rem;
+}
+
+@media (min-width:768px) {
+  .c7 {
+    font-size: 2.8rem;
+  }
+}
+
+@media (min-width:768px) {
+  .c0 {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+}
+
+@media (min-width:768px) {
+  .c2 {
+    height: 41rem;
+    width: 30rem;
+  }
+}
+
+@media (min-width:768px) {
+  .c5 {
+    margin-left: 3.2rem;
+  }
+}
+
+@media (min-width:768px) {
+  .c6 {
+    text-align: left;
+  }
+}
+
+@media (min-width:768px) {
+  .c9 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 1rem;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+}
+
+<section
+  class=""
+>
+  <div
+    class="c0"
+  >
+    <div
+      class="c1"
+    >
+      <div
+        class="c2"
+      >
+        <div
+          class="c3"
+        >
+          <div
+            class="c4"
+          >
+            <img
+              alt="DIREITO Á MORADIA"
+              src="https://source.unsplash.com/user/willianjusten/300x140"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="c1"
+    >
+      <div
+        class="c5"
+      >
+        <div
+          class="c6"
+        >
+          <h2
+            class="c7"
+            color="secondary"
+          >
+            Conheça o Jeferson
+          </h2>
+        </div>
+        <p
+          class="c8"
+        >
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div
+    class="c9"
+  >
+    <button
+      class="c10"
+    >
+      <span>
+        Transparência
+      </span>
+    </button>
+    <button
+      class="c11"
+    >
+      <span>
+        Propostas
+      </span>
+    </button>
+    <button
+      class="c10"
+    >
+      <span>
+        Pronunciamentos
+      </span>
+    </button>
+  </div>
+</section>
+`

@@ -1,15 +1,15 @@
 import { Story, Meta } from '@storybook/react'
 
 import Banner, { BannerProps } from '.'
-
+import item from './mock'
 export default {
   title: 'Banner',
   component: Banner,
-  args: {
-    title: 'Teste',
-    backgroundImage: '/img/jeferson-img.png',
-    floatImage: '/img/jeferson-float.png'
-  }
+  args: { ...item }
 } as Meta
 
-export const Default: Story<BannerProps> = (args) => <Banner {...args} />
+export const Default: Story<BannerProps> = (args) => (
+  <div style={{ maxWidth: '104rem' }}>
+    <Banner {...args} />
+  </div>
+)

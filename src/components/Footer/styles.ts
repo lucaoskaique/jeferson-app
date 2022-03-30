@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components'
 import media from 'styled-media-query'
 
 export const Wrapper = styled.main``
+
 export const Content = styled.div`
   ${({ theme }) => css`
     display: flex;
@@ -36,14 +37,13 @@ export const Column = styled.div`
 `
 export const Copyright = styled.div`
   ${({ theme }) => css`
-    color: ${theme.colors.gray};
+    color: ${theme.colors.white};
     font-size: ${theme.font.sizes.xsmall};
     margin-top: ${theme.spacings.large};
     margin-bottom: ${theme.spacings.medium};
     text-align: center;
   `}
 `
-
 export const MenuGroup = styled.div`
   ${({ theme }) => css`
     display: flex;
@@ -64,7 +64,10 @@ export const IconWrapper = styled.div`
   `}
 `
 export const LogoWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  height: 12rem;
+
+  ${media.greaterThan('medium')`
+    height: 13.9rem;
+    width: 36.9rem;
+  `}
 `

@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TwitterContainer /> should render twitter container 1`] = `
+.c0 {
+  max-width: 67rem;
+  max-height: 60rem;
+  overflow: auto;
+  margin: '2rem auto';
+}
+
+<div
+  class="c0"
+>
+  <section
+    class="twitterContainer"
+  >
+    <div
+      class="twitter-embed"
+    >
+      <a
+        class="twitter-timeline"
+        data-chrome="noheader nofooter noborders"
+        data-theme="dark"
+        data-tweet-limit="3"
+        href="https://twitter.com/depjeferson"
+      >
+        Tweets by HeyMarkKop
+      </a>
+      <script
+        src="https://platform.twitter.com/widgets.js"
+      />
+    </div>
+  </section>
+</div>
+`

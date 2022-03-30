@@ -25,6 +25,10 @@ export const Wrapper = styled.section`
       .slick-slide > div {
         margin: 0 ${theme.spacings.small};        
       }
+
+      .slick-list {
+        margin: 0 -${theme.spacings.small};
+      }
     `}
 
     .slick-prev,

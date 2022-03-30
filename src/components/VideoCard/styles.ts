@@ -1,20 +1,23 @@
 import styled, { css } from 'styled-components'
 
-export const Wrapper = styled.main`
+export const Wrapper = styled.div`
   ${({ theme }) => css`
     display: flex;
     flex-direction: column;
     justify-content: center;
     position: relative;
+
     width: 100%;
     height: 100%;
+
+    margin-bottom: ${theme.spacings.small};
     background-color: ${theme.colors.white};
     border-radius: 2rem;
     overflow: hidden;
     box-shadow: 0 0.4rem 0.5rem 0 rgba(0, 0, 0, 0.2);
   `}
 `
-export const ImageBox = styled.main`
+export const ImageBox = styled.div`
   height: 30rem;
   width: 100%;
   background: #f6f7f8;

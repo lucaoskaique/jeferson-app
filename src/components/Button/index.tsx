@@ -23,7 +23,7 @@ const Button: React.ForwardRefRenderFunction<S.WrapperProps, ButtonProps> = (
     background = 'hot',
     fullWidth = false,
     icon,
-    textColor,
+    textColor = 'white',
     ...props
   },
   ref

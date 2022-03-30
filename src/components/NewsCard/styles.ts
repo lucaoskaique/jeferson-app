@@ -5,17 +5,20 @@ export const Wrapper = styled.article`
     position: relative;
     display: flex;
     flex-direction: column;
+
     width: 100%;
     height: 100%;
+
     background-color: ${theme.colors.white};
     border-radius: 2rem;
+
     overflow: hidden;
     box-shadow: 0 0.4rem 0.5rem 0 rgba(0, 0, 0, 0.2);
   `}
 `
 
 export const ImageBox = styled.a`
-  min-height: 22rem;
+  min-height: 14rem;
   position: relative;
   width: 100%;
   background: #f6f7f8;
@@ -56,7 +59,7 @@ export const Content = styled.div`
   `}
 `
 export const Info = styled.a`
-  max-width: calc(100% - 1rem);
+  max-width: calc(100% - 2.5rem);
   text-decoration: none;
 `
 
