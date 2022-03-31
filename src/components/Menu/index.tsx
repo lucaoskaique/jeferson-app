@@ -88,7 +88,7 @@ const Menu = () => {
       <S.MenuFull aria-hidden={!isOpen} isOpen={isOpen}>
         <CloseIcon aria-label="Close Menu" onClick={() => setIsOpen(false)} />
         <S.MenuNav>
-          <S.MenuLink href="#">
+          <S.MenuLink href="/">
             <S.MenuLinkWrapper>
               Conheça o Jeferson
               <span>
@@ -96,14 +96,16 @@ const Menu = () => {
               </span>
             </S.MenuLinkWrapper>
           </S.MenuLink>
-          <S.MenuLink href="#">Notícias</S.MenuLink>
-          <S.MenuLink href="#">Mídias</S.MenuLink>
-          <S.MenuLink href="#">Contato</S.MenuLink>
+          <S.MenuLink href="/news">Notícias</S.MenuLink>
+          <S.MenuLink href="/medias">Mídias</S.MenuLink>
+          <S.MenuLink href="/contact">Contato</S.MenuLink>
         </S.MenuNav>
         <S.RegisterBox>
-          <Button fullWidth size="large">
-            Admin
-          </Button>
+          <Link href="/" passHref>
+            <Button as="a" fullWidth size="large">
+              Admin
+            </Button>
+          </Link>
         </S.RegisterBox>
       </S.MenuFull>
     </S.Wrapper>

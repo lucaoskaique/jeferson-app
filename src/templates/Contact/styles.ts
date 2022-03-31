@@ -12,19 +12,20 @@ export const BannerBlock = styled.div`
     background-attachment: fixed;
     background-position: center center;
     text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     margin-bottom: ${theme.spacings.xxlarge};
 
-    ${media.lessThan('medium')`
+    /* ${media.lessThan('medium')`
       display: none
-    `}
+    `} */
   `}
 `
-export const BannerContent = styled.div`
+export const BannerContent = styled(Container)`
   ${({ theme }) => css`
-    padding: ${theme.spacings.xxlarge};
+    padding: ${theme.spacings.medium};
+
+    ${media.greaterThan('medium')`
+      padding: ${theme.spacings.xxlarge};
+    `}
   `}
 `
 export const Subtitle = styled.h4`
@@ -33,11 +34,7 @@ export const Subtitle = styled.h4`
     font-size: ${theme.font.sizes.small};
   `}
 `
-export const Content = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
+export const Content = styled(Container)`
   max-width: 57rem;
 `
 export const ContentWrapper = styled.div`
