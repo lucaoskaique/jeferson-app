@@ -3,7 +3,7 @@ import * as S from './styles'
 export type HeadingProps = {
   children: React.ReactNode
   color?: 'primary' | 'secondary' | 'white'
-  size?: 'small' | 'medium'
+  size?: 'small' | 'medium' | 'large'
 }
 
 export const Heading = ({

@@ -19,7 +19,8 @@ export default {
       medium: '1.6rem',
       large: '1.8rem',
       xlarge: '2.0rem',
-      xxlarge: '2.8rem'
+      xxlarge: '2.8rem',
+      huge: '3.2rem'
     }
   },
   colors: {
@@ -31,7 +32,9 @@ export default {
     lightGray: '#EAEAEA',
     gray: '#8F8F8F',
     darkGray: '#2E2F42',
-    red: '#FF6347'
+    red: '#FF6347',
+    gradIce: 'linear-gradient(90.06deg, #72C042 -45.46%, #0092D3 127.87%)',
+    gradHot: 'linear-gradient(90deg, #EA5830 3.14%, #F89936 92.45%)'
   },
   spacings: {
     xxsmall: '0.8rem',

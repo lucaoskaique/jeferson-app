@@ -35,4 +35,14 @@ describe('<Heading />', () => {
       'font-size': '1.6rem'
     })
   })
+
+  it('should render a heading with large size', () => {
+    renderWithTheme(<Heading size="large">Deputado Jeferson Fernandes</Heading>)
+
+    expect(
+      screen.getByRole('heading', { name: /deputado Jeferson Fernandes/i })
+    ).toHaveStyle({
+      'font-size': '2.8rem'
+    })
+  })
 })

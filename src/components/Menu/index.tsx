@@ -40,13 +40,13 @@ const Menu = () => {
               </span>
             </S.MenuLink>
           </Link>
-          <Link href="/games" passHref>
+          <Link href="/news" passHref>
             <S.MenuLink>Notícias</S.MenuLink>
           </Link>
-          <Link href="/games" passHref>
+          <Link href="/medias" passHref>
             <S.MenuLink>Mídias</S.MenuLink>
           </Link>
-          <Link href="/games" passHref>
+          <Link href="/contact" passHref>
             <S.MenuLink>Contato</S.MenuLink>
           </Link>
         </S.MenuNav>

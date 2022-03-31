@@ -50,7 +50,7 @@ describe('<TextField />', () => {
 
     const input = screen.getByRole('textbox')
     const text = 'This is my new text'
-    userEvent.type(input, text)
+    await userEvent.type(input, text)
 
     await waitFor(() => {
       expect(input).toHaveValue(text)
@@ -74,7 +74,7 @@ describe('<TextField />', () => {
     expect(input).toBeDisabled()
 
     const text = 'This is my new text'
-    userEvent.type(input, text)
+    await userEvent.type(input, text)
 
     await waitFor(() => {
       expect(input).not.toHaveValue(text)

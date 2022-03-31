@@ -4,6 +4,13 @@ import media from 'styled-media-query'
 import { HeadingProps } from '.'
 
 const wrapperModifiers = {
+  large: (theme: DefaultTheme) => css`
+    font-size: ${theme.font.sizes.xxlarge};
+
+    ${media.greaterThan('medium')`
+      font-size: ${theme.font.sizes.huge};
+    `};
+  `,
   medium: (theme: DefaultTheme) => css`
     font-size: ${theme.font.sizes.xlarge};
 

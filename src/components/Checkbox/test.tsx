@@ -40,7 +40,7 @@ describe('<Checkbox />', () => {
 
     expect(onCheck).not.toHaveBeenCalled()
 
-    userEvent.click(screen.getByRole('checkbox'))
+    await userEvent.click(screen.getByRole('checkbox'))
     await waitFor(() => {
       expect(onCheck).toHaveBeenCalledTimes(1)
     })

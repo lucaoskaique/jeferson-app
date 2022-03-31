@@ -1,15 +1,14 @@
 import About, { AboutProps } from 'components/About'
 import Banner, { BannerProps } from 'components/Banner'
 import { Container } from 'components/Container'
-import Footer from 'components/Footer'
 import Heading from 'components/Heading'
 import Hero from 'components/Hero'
 import { ImageCardProps } from 'components/ImageCard'
 import ImageCardSlider from 'components/ImageCardSlider'
-import Menu from 'components/Menu'
 import { NewsCardProps } from 'components/NewsCard'
 import NewsCardSlider from 'components/NewsCardSlider'
 import { VideoCardProps } from 'components/VideoCard'
+import Base from 'templates/Base'
 
 import * as S from './styles'
 
@@ -28,11 +27,7 @@ const Home = ({
   newsSlider,
   imageSlider
 }: HomeTemplateProps) => (
-  <section>
-    <Container>
-      <Menu />
-    </Container>
-
+  <Base>
     <S.SectionBanner>
       <Banner
         title={banner.title}
@@ -67,12 +62,7 @@ const Home = ({
         <ImageCardSlider items={imageSlider} />
       </Container>
     </S.SectionImages>
-    <S.SectionFooter>
-      <Container>
-        <Footer />
-      </Container>
-    </S.SectionFooter>
-  </section>
+  </Base>
 )
 
 export default Home
