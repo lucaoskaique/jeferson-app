@@ -1,11 +1,18 @@
+import { Container } from 'components/Container'
 import styled, { css } from 'styled-components'
 import media from 'styled-media-query'
-
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   height: 100vh;
   justify-content: space-between;
+
+  ${media.lessThan('medium')`
+    ${Container} {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  `}
 `
 
 export const Content = styled.div`

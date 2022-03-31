@@ -15,8 +15,7 @@ export default {
     disabled: false
   },
   argTypes: {
-    onInput: { action: 'changed' },
-    icon: { type: '' }
+    onInput: { action: 'changed' }
   }
 } as Meta<TextFieldProps>
 

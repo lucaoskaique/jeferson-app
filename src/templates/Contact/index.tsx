@@ -1,3 +1,5 @@
+import { Container } from 'components/Container'
+import FormContact from 'components/FormContact'
 import Heading from 'components/Heading'
 import Base from 'templates/Base'
 
@@ -19,9 +21,13 @@ const ContactTemplate = () => (
         </div>
       </S.BannerContent>
     </S.BannerBlock>
-    <S.Content>
-      <h1>formulário</h1>
-    </S.Content>
+    <Container>
+      <S.Content>
+        <S.ContentWrapper>
+          <FormContact />
+        </S.ContentWrapper>
+      </S.Content>
+    </Container>
   </Base>
 )
 
