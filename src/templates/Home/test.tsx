@@ -17,14 +17,33 @@ const props = {
   imageSlider: [imageSliderMock[0]]
 }
 
+jest.mock('components/Menu', () => {
+  return {
+    __esModule: true,
+    default: function Mock() {
+      return <div data-testid="Mock Menu"></div>
+    }
+  }
+})
+
+jest.mock('components/Footer', () => {
+  return {
+    __esModule: true,
+    default: function Mock() {
+      return <div data-testid="Mock Footer"></div>
+    }
+  }
+})
+
 describe('<Home />', () => {
   it('should render the menu and footer', () => {
     renderWithTheme(<Home {...props} />)
-    expect(
-      screen.getByRole('heading', { name: /links importantes/i })
-    ).toBeInTheDocument()
 
-    expect(screen.getByLabelText(/open menu/i)).toBeInTheDocument()
+    //menu
+    expect(screen.getByTestId('Mock Menu')).toBeInTheDocument()
+
+    //footer
+    expect(screen.getByTestId('Mock Footer')).toBeInTheDocument()
 
     expect(
       screen.getByRole('heading', { name: /Notícias/i })
