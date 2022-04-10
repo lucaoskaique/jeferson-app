@@ -8,7 +8,8 @@ const props = {
   description:
     'Moradores da Vila Nazaré pedem que CCDH acompanhe processo de realocação das famílias',
   img: 'https://source.unsplash.com/user/willianjusten/300x140',
-  date: '28 de novembro de 2021'
+  date: '28 de novembro de 2021',
+  slug: 'population-zero'
 }
 
 describe('<NewsCard />', () => {
