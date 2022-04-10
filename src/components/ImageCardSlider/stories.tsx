@@ -7,7 +7,10 @@ export default {
   title: 'ImageCardSlider',
   component: ImageCardSlider,
   args: { items },
-  parameters: { layout: 'fullscreen', backgrounds: { default: 'dark' } }
+  parameters: {
+    layout: 'fullscreen',
+    backgrounds: { default: 'dark' }
+  }
 } as Meta
 
 export const Default: Story<ImageCardSliderProps> = (args) => (

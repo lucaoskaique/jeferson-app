@@ -226,7 +226,7 @@ exports[`<About /> should render the heading 1`] = `
             class="c4"
           >
             <img
-              alt="DIREITO Á MORADIA"
+              alt="Thumb  - DIREITO Á MORADIA"
               src="https://source.unsplash.com/user/willianjusten/300x140"
             />
           </div>

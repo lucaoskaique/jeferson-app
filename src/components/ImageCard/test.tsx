@@ -11,6 +11,8 @@ describe('<ImageCard />', () => {
   it('should render the image', () => {
     renderWithTheme(<ImageCard {...props} />)
 
-    expect(screen.getByRole('img', { name: props.title })).toBeInTheDocument()
+    expect(
+      screen.getByRole('img', { name: `Thumb - ${props.title}` })
+    ).toBeInTheDocument()
   })
 })

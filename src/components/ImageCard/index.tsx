@@ -7,7 +7,7 @@ export type ImageCardProps = {
 const ImageCard = ({ title, img }: ImageCardProps) => (
   <S.Wrapper>
     <S.ImageBox>
-      <img src={img} alt={title} />
+      <img src={img} alt={`Thumb  - ${title}`} />
     </S.ImageBox>
   </S.Wrapper>
 )
