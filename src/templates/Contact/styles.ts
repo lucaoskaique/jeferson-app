@@ -4,8 +4,9 @@ import media from 'styled-media-query'
 
 export const Wrapper = styled(Container)`
   display: block;
+  height: 100vh;
 `
-export const BannerBlock = styled.div`
+export const Cover = styled.div`
   ${({ theme }) => css`
     background: url('img/setas-banner.png'), ${theme.colors.gradIce};
     background-repeat: repeat;
@@ -13,13 +14,13 @@ export const BannerBlock = styled.div`
     background-position: center center;
     text-align: center;
     margin-bottom: ${theme.spacings.xxlarge};
-
+    height: ;
     /* ${media.lessThan('medium')`
       display: none
     `} */
   `}
 `
-export const BannerContent = styled(Container)`
+export const CoverContent = styled(Container)`
   ${({ theme }) => css`
     padding: ${theme.spacings.medium};
 

@@ -13,7 +13,7 @@ export const Wrapper = styled.article`
     border-radius: 2rem;
 
     overflow: hidden;
-    box-shadow: 0 0.4rem 0.5rem 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0.2rem 0.3rem 0 rgba(0, 0, 0, 0.2);
   `}
 `
 

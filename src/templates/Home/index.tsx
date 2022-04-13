@@ -51,7 +51,7 @@ const Home = ({
     <S.SectionNews>
       <Container>
         <Heading color="primary">Notícias</Heading>
-        <NewsCardSlider items={newsSlider}></NewsCardSlider>
+        <NewsCardSlider items={newsSlider} />
       </Container>
     </S.SectionNews>
 

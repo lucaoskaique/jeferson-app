@@ -10,7 +10,7 @@ const TextContentMock: TextContentProps = {
 <h4>Heading</h4>
 <h5>Heading</h5>
 <h6>Heading</h6>
-<img alt="" src="/img/games/cyberpunk-1.jpg" />
+<img alt="" src="https://source.unsplash.com/user/willianjusten/1300x649" />
 <p>
   Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero,
   tempore. Nulla accusamus tempora quaerat repellat accusantium
@@ -23,7 +23,7 @@ const TextContentMock: TextContentProps = {
   consequuntur eligendi similique nostrum aspernatur natus! Laboriosam
   sint quis ad quibusdam?
 </p>
-<img alt="" src="/img/games/cyberpunk-2.jpg" />
+<img alt="" src="https://source.unsplash.com/user/willianjusten/1300x649" />
 <ul>
   <li>Lorem Ipsum</li>
   <li>Lorem Ipsum</li>

@@ -1,5 +1,5 @@
 import NewsPageTemplate from 'templates/NewsPage'
 
-export default function GamesPage() {
+export default function NewsPage() {
   return <NewsPageTemplate />
 }

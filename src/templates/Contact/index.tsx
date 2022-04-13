@@ -7,8 +7,8 @@ import * as S from './styles'
 
 const ContactTemplate = () => (
   <Base>
-    <S.BannerBlock>
-      <S.BannerContent>
+    <S.Cover>
+      <S.CoverContent>
         <div>
           <Heading size="large" color="white">
             Contato
@@ -19,8 +19,8 @@ const ContactTemplate = () => (
             os campos do formulário abaixo que prontamente reponderemos.
           </S.Subtitle>
         </div>
-      </S.BannerContent>
-    </S.BannerBlock>
+      </S.CoverContent>
+    </S.Cover>
     <Container>
       <S.Content>
         <S.ContentWrapper>

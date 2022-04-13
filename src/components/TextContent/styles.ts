@@ -5,9 +5,8 @@ export const Wrapper = styled.div`
   ${({ theme }) => css`
     color: ${theme.colors.black};
     ${media.greaterThan('medium')`
-      background: ${theme.colors.white};
-      padding: ${theme.spacings.medium};
-      
+      background: ${theme.colors.mainBg};
+      padding: ${theme.spacings.xsmall};      
     `}
     h1,
     h2,
