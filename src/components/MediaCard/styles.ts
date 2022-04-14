@@ -12,7 +12,8 @@ export const Wrapper = styled.article`
     box-shadow: 0 0.4rem 0.5rem 0 rgba(0, 0, 0, 0.2);
   `}
 `
-export const ImageBox = styled.a`
+export const ImageBox = styled.div`
+  flex-shrink: 0;
   height: 25rem;
   width: 100%;
   background: #f6f7f8;

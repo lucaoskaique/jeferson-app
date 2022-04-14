@@ -1,5 +1,15 @@
-import NewsPageTemplate from 'templates/NewsPage'
+import NewsPageTemplate, { NewsPageTemplateProps } from 'templates/NewsPage'
 
-export default function NewsPage() {
-  return <NewsPageTemplate />
+import newsMock from '../templates/NewsPage/mock'
+
+export default function NewsPage(props: NewsPageTemplateProps) {
+  return <NewsPageTemplate {...props} />
+}
+
+export async function getServerSideProps() {
+  return {
+    props: {
+      news: newsMock
+    }
+  }
 }
