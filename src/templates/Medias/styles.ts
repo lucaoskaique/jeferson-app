@@ -7,11 +7,10 @@ const Section = styled(Container).attrs({ as: 'section' })`
   ${({ theme }) => css`
     ${HeadingStyles.Wrapper} {
       margin-bottom: ${theme.spacings.medium};
-      text-align: left;
     }
-    margin-bottom: ${theme.spacings.xlarge};
+    margin-bottom: ${theme.spacings.xxsmall};
     ${media.greaterThan('medium')`
-      margin-bottom: calc(${theme.spacings.xlarge} * 2);
+      margin-bottom: calc(${theme.spacings.xxsmall} * 2);
     `}
   `}
 `

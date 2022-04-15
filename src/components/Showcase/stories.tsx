@@ -1,14 +1,12 @@
 import { Story, Meta } from '@storybook/react'
 
 import Showcase, { ShowcaseProps } from '.'
-import items from './mock'
 
 export default {
   title: 'Showcase',
   component: Showcase,
   args: {
-    title: 'Fotos',
-    photos: items
+    title: 'Fotos'
   },
   parameters: {
     layout: 'fullscreen',

@@ -9,24 +9,25 @@ export const Wrapper = styled.div`
 export const Text = styled.div`
   ${({ theme }) => css`
     ${HeadingStyles.Wrapper} {
-      margin-bottom: ${theme.spacings.xsmall};
-      text-align: left;
+      margin-bottom: ${theme.spacings.xxsmall};
     }
   `}
 `
 export const Subtext = styled.div`
   ${({ theme }) => css`
-    ${HeadingStyles.Wrapper} {
-      margin-bottom: ${theme.spacings.xxsmall};
-      text-align: right;
-    }
+    margin-top: ${theme.spacings.xxsmall};
+    text-align: right;
   `}
 `
 
 export const Content = styled.div`
-  display: flex;
-  flex-direction: row;
-  ${MediaCardStyles.Wrapper} {
+  ${({ theme }) => css`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: ${theme.spacings.xxsmall};
+    /* ${MediaCardStyles.Wrapper} {
     margin-right: 1rem;
-  }
+  } */
+  `}
 `

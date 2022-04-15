@@ -1,30 +1,21 @@
 import Heading from 'components/Heading'
-import MediaCard, { MediaCardProps } from 'components/MediaCard'
-import MediaMatch from 'components/MediaMatch'
 import Link from 'next/link'
 
 import * as S from './styles'
 
 export type ShowcaseProps = {
+  children: React.ReactNode
   title?: string
-  photos: MediaCardProps[]
 }
 
-const Showcase = ({ title, photos }: ShowcaseProps) => (
+const Showcase = ({ title, children }: ShowcaseProps) => (
   <S.Wrapper>
     <S.Text>
       <Heading size="medium" color="primary">
         {title}
       </Heading>
     </S.Text>
-    <MediaMatch greaterThan="medium">
-      <S.Content>
-        {!!photos &&
-          photos
-            .slice(0, 3)
-            .map((photo, index) => <MediaCard key={index} {...photo} />)}
-      </S.Content>
-    </MediaMatch>
+    <S.Content>{children}</S.Content>
     <S.Subtext>
       <Link href="/" passHref>
         <a>

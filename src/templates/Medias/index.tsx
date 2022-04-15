@@ -1,9 +1,21 @@
 import Heading from 'components/Heading'
+import MediaCard, { MediaCardProps } from 'components/MediaCard'
+import Showcase from 'components/Showcase'
 import Base from 'templates/Base'
 
 import * as S from './styles'
-
-const MediasTemplate = () => (
+export type MediasTemplateProps = {
+  fotos: MediaCardProps[]
+  videos: MediaCardProps[]
+  audios: MediaCardProps[]
+  publications: MediaCardProps[]
+}
+const MediasTemplate = ({
+  fotos,
+  videos,
+  audios,
+  publications
+}: MediasTemplateProps) => (
   <Base>
     <S.Cover>
       <S.CoverContent>
@@ -21,24 +33,32 @@ const MediasTemplate = () => (
     </S.Cover>
     <S.Main>
       <S.SectionPhotos>
-        <Heading size="small" color="primary">
-          Fotos
-        </Heading>
+        <Showcase title="Fotos">
+          {fotos.slice(0, 3).map((item, index) => (
+            <MediaCard key={`thumb-${index}`} {...item} />
+          ))}
+        </Showcase>
       </S.SectionPhotos>
       <S.SectionVideos>
-        <Heading size="small" color="primary">
-          Videos
-        </Heading>
+        <Showcase title="Videos">
+          {videos.slice(0, 3).map((item, index) => (
+            <MediaCard key={`thumb-${index}`} {...item} />
+          ))}
+        </Showcase>
       </S.SectionVideos>
       <S.SectionAudios>
-        <Heading size="small" color="primary">
-          Audios
-        </Heading>
+        <Showcase title="Áudios">
+          {audios.slice(0, 3).map((item, index) => (
+            <MediaCard key={`thumb-${index}`} {...item} />
+          ))}
+        </Showcase>
       </S.SectionAudios>
       <S.SectionPublications>
-        <Heading size="small" color="primary">
-          Publicações
-        </Heading>
+        <Showcase title="Publicações">
+          {publications.slice(0, 3).map((item, index) => (
+            <MediaCard key={`thumb-${index}`} {...item} />
+          ))}
+        </Showcase>
       </S.SectionPublications>
     </S.Main>
   </Base>
