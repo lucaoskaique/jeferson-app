@@ -5,13 +5,13 @@ import Base from 'templates/Base'
 
 import * as S from './styles'
 export type MediasTemplateProps = {
-  fotos: MediaCardProps[]
+  photos: MediaCardProps[]
   videos: MediaCardProps[]
   audios: MediaCardProps[]
   publications: MediaCardProps[]
 }
 const MediasTemplate = ({
-  fotos,
+  photos,
   videos,
   audios,
   publications
@@ -33,8 +33,8 @@ const MediasTemplate = ({
     </S.Cover>
     <S.Main>
       <S.SectionPhotos>
-        <Showcase title="Fotos">
-          {fotos.slice(0, 3).map((item, index) => (
+        <Showcase title="Fotos" page="photos">
+          {photos.slice(0, 3).map((item, index) => (
             <MediaCard key={`thumb-${index}`} {...item} />
           ))}
         </Showcase>

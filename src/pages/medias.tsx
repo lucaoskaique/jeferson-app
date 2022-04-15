@@ -7,7 +7,7 @@ export default function GamesPage(props: MediasTemplateProps) {
 export async function getServerSideProps() {
   return {
     props: {
-      fotos: [
+      photos: [
         {
           title: 'Foto 1',
           img: 'https://picsum.photos/id/1/400/300'

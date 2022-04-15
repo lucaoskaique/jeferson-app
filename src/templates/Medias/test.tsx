@@ -3,8 +3,15 @@ import { renderWithTheme } from 'utils/tests/helpers'
 
 import Medias from '.'
 
+jest.mock('templates/Base', () => ({
+  __esModule: true,
+  default: function Mock({ children }: { children: React.ReactNode }) {
+    return <div data-testid="Mock Base">{children}</div>
+  }
+}))
+
 const props = {
-  fotos: [
+  photos: [
     {
       title: 'Foto 1',
       img: 'https://picsum.photos/id/1/400/300'

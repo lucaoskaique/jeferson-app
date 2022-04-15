@@ -6,9 +6,10 @@ import * as S from './styles'
 export type ShowcaseProps = {
   children: React.ReactNode
   title?: string
+  page?: string
 }
 
-const Showcase = ({ title, children }: ShowcaseProps) => (
+const Showcase = ({ title, children, page }: ShowcaseProps) => (
   <S.Wrapper>
     <S.Text>
       <Heading size="medium" color="primary">
@@ -17,7 +18,7 @@ const Showcase = ({ title, children }: ShowcaseProps) => (
     </S.Text>
     <S.Content>{children}</S.Content>
     <S.Subtext>
-      <Link href="/" passHref>
+      <Link href={`/${page}`} passHref>
         <a>
           <Heading size="small" color="primary">
             {`Veja todos os ${title}`}

@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components'
 import media from 'styled-media-query'
 
 export const Main = styled(Container)``
-
+export const Wrapper = styled.main``
 export const Cover = styled.div`
   ${({ theme }) => css`
     background: url('img/setas-banner.png'), ${theme.colors.gradHot};
