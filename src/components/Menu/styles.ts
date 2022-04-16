@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components'
-import media from 'styled-media-query'
 
 export const Wrapper = styled.menu<MenuFullProps>`
   ${({ theme, isOpen }) => css`
@@ -34,12 +33,15 @@ export const MenuFull = styled.nav<MenuFullProps>`
     flex-direction: column;
     justify-content: space-between;
     background: ${theme.colors.white};
+
     position: fixed;
     z-index: ${theme.layers.menu};
+
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
+
     height: 100vh;
     overflow: hidden;
     transition: opacity 0.3s ease-in-out;
@@ -61,7 +63,10 @@ export const MenuFull = styled.nav<MenuFullProps>`
       color: ${theme.colors.black};
       font-weight: ${theme.font.bold};
       font-size: ${theme.font.sizes.xlarge};
-      margin-bottom: ${theme.spacings.small};
+      a:not(:last-child) {
+        margin-bottom: ${theme.spacings.small};
+      }
+
       transform: ${isOpen ? 'translateY(0)' : 'translateY(3rem)'};
       transition: transform 0.3s ease-in-out;
     }
@@ -83,9 +88,9 @@ export const LogoWrapper = styled.div``
 
 export const MenuNav = styled.div`
   ${({ theme }) => css`
-    ${media.greaterThan('medium')`
-			margin-left: ${theme.spacings.small};
-		`}
+    display: flex;
+    flex-direction: row;
+    gap: ${theme.spacings.large};
   `}
 `
 
@@ -94,7 +99,6 @@ export const MenuLink = styled.a`
     position: relative;
     color: ${theme.colors.secondary};
     font-size: ${theme.font.sizes.medium};
-    margin: 0.3rem ${theme.spacings.small} 0;
     text-decoration: none;
     text-align: center;
     &:hover {

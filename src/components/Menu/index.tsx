@@ -1,9 +1,9 @@
-import { CaretDownFill } from '@styled-icons/bootstrap/CaretDownFill'
 import { FacebookWithCircle as FacebookIcon } from '@styled-icons/entypo-social/FacebookWithCircle'
 import { InstagramWithCircle as InstagramIcon } from '@styled-icons/entypo-social/InstagramWithCircle'
 import { TwitterWithCircle as TwitterIcon } from '@styled-icons/entypo-social/TwitterWithCircle'
 import { Close as CloseIcon } from '@styled-icons/material-outlined/Close'
 import { Menu as MenuIcon } from '@styled-icons/material-sharp/Menu'
+import AboutDropdown from 'components/AboutDropdown'
 import Button from 'components/Button'
 import Logo from 'components/Logo'
 import MediaMatch from 'components/MediaMatch'
@@ -32,14 +32,8 @@ const Menu = () => {
 
       <MediaMatch greaterThan="medium">
         <S.MenuNav>
-          <Link href="/" passHref>
-            <S.MenuLink>
-              Conheça o Jeferson
-              <span>
-                <CaretDownFill height={15} width={15} />
-              </span>
-            </S.MenuLink>
-          </Link>
+          <AboutDropdown />
+
           <Link href="/news" passHref>
             <S.MenuLink>Notícias</S.MenuLink>
           </Link>
@@ -55,30 +49,30 @@ const Menu = () => {
       <MediaMatch greaterThan="medium">
         <S.MenuGroup>
           <S.IconWrapper>
-            <Link href="/cart">
+            <Link href="https://www.facebook.com/DepJeferson">
               <a>
                 <FacebookIcon aria-label="facebook" />
               </a>
             </Link>
           </S.IconWrapper>
           <S.IconWrapper>
-            <Link href="/cart">
+            <Link href="https://www.instagram.com/depjeferson/">
               <a>
                 <InstagramIcon />
               </a>
             </Link>
           </S.IconWrapper>
           <S.IconWrapper>
-            <Link href="/cart">
+            <Link href="https://twitter.com/DepJeferson">
               <a>
                 <TwitterIcon />
               </a>
             </Link>
           </S.IconWrapper>
           <MediaMatch greaterThan="medium">
-            <Link href="/sign-in" passHref>
+            <Link href="/" passHref>
               <Button size="small" background="ice">
-                Sign in
+                Login
               </Button>
             </Link>
           </MediaMatch>
@@ -88,14 +82,9 @@ const Menu = () => {
       <S.MenuFull aria-hidden={!isOpen} isOpen={isOpen}>
         <CloseIcon aria-label="Close Menu" onClick={() => setIsOpen(false)} />
         <S.MenuNav>
-          <S.MenuLink href="/">
-            <S.MenuLinkWrapper>
-              Conheça o Jeferson
-              <span>
-                <CaretDownFill height={15} width={15} />
-              </span>
-            </S.MenuLinkWrapper>
-          </S.MenuLink>
+          <S.MenuLink href="/">Pronunciamentos</S.MenuLink>
+          <S.MenuLink href="/">Propostas</S.MenuLink>
+          <S.MenuLink href="/">Transparência</S.MenuLink>
           <S.MenuLink href="/news">Notícias</S.MenuLink>
           <S.MenuLink href="/medias">Mídias</S.MenuLink>
           <S.MenuLink href="/contact">Contato</S.MenuLink>
