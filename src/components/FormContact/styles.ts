@@ -18,18 +18,43 @@ export const BoxCityPhone = styled.div`
     justify-content: space-between;
   `}
 `
+export const Form = styled.form`
+  ${({ theme }) => css`
+    max-width: 100%;
+    display: grid;
+    gap: ${theme.spacings.xsmall};
+    > button {
+      margin-top: ${theme.spacings.xxlarge};
+    }
+    ${media.greaterThan('medium')`
+      grid-template-columns: 1fr 1fr;
+      gap: ${theme.spacings.medium};
+      > button {
+        grid-column: 2;
+        justify-self: end;
+        margin-top: 0;
+      }
+    `}
+  `}
+`
+
 export const BoxButton = styled.div`
   text-align: right;
+  ${({ theme }) => css`
+    margin: ${theme.spacings.xxsmall} ${theme.spacings.xxsmall};
+  `}
 `
 export const Wrapper = styled.div`
   ${({ theme }) => css`
+    max-width: 100%;
+    justify-content: space-between;
     ${TextFieldStyles.Wrapper},
     ${TextAreaStyles.Wrapper} {
       margin: ${theme.spacings.xxsmall} 0;
     }
 
     ${ButtonStyles.Wrapper} {
-      margin: ${theme.spacings.medium} auto ${theme.spacings.xsmall};
+      margin: ${theme.spacings.xsmall} auto ${theme.spacings.xsmall};
     }
 
     ${media.greaterThan('medium')`

@@ -3,7 +3,13 @@ import {{pascalCase name}} from '.'
 
 export default {
   title: '{{pascalCase name}}',
-  component: {{pascalCase name}}
+  component: {{pascalCase name}},
+  parameters: { 
+    layout: 'fullscreen', 
+    backgrounds: { 
+      default: 'dark' 
+    } 
+  }
 } as Meta
 
 export const Default: Story = () => <{{pascalCase name}} />

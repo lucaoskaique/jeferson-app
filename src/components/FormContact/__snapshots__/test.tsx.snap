@@ -146,6 +146,15 @@ exports[`<FormContact /> should render the form 1`] = `
 
 .c11 {
   text-align: right;
+  margin: 0.8rem 0.8rem;
+}
+
+.c0 {
+  max-width: 100%;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .c0 .c2,
@@ -154,7 +163,7 @@ exports[`<FormContact /> should render the form 1`] = `
 }
 
 .c0 .c12 {
-  margin: 3.2rem auto 1.6rem;
+  margin: 1.6rem auto 1.6rem;
 }
 
 @media (min-width:768px) {
