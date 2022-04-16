@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 import media from 'styled-media-query'
 
-export const Wrapper = styled.div``
+export const Wrapper = styled.section``
 export const Info = styled.div`
   ${({ theme }) => css`
     text-align: center;
@@ -14,11 +14,11 @@ export const Content = styled.div`
 
   ${media.greaterThan('medium')`
     flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   `}
 `
 export const Videos = styled.div`
-  width: 100%;
-
   ${media.greaterThan('medium')`
       width: 50%;
   `}
