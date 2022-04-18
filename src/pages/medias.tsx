@@ -4,7 +4,7 @@ export default function GamesPage(props: MediasTemplateProps) {
   return <MediasTemplate {...props} />
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   return {
     props: {
       photos: [

@@ -6,7 +6,7 @@ export default function NewsPage(props: NewsPageTemplateProps) {
   return <NewsPageTemplate {...props} />
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   return {
     props: {
       news: newsMock
