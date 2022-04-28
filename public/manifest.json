@@ -1,5 +1,5 @@
 {
-  "name": "React/Next - Boilerplate",
+  "name": "Deputado Jeferson Fernandes",
   "short_name": "React/Next",
   "icons": [
     {
@@ -13,9 +13,9 @@
       "sizes": "512x512"
     }
   ],
-  "background_color": "#06092B",
-  "description": "Boilerplate utilizando Typescript, React, NextJS e Styled Components!",
+  "background_color": "#ffffff",
+  "description": "Deputado Jeferson Fernandes.",
   "display": "fullscreen",
   "start_url": "/",
-  "theme_color": "#06092B"
+  "theme_color": "#ffffff"
 }
