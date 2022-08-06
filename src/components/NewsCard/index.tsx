@@ -14,13 +14,13 @@ export type NewsCardProps = {
 
 const NewsCard = ({ slug, title, description, date, img }: NewsCardProps) => (
   <S.Wrapper>
-    <Link href={`/game/${slug}`} passHref>
+    <Link href={`/post/${slug}`} passHref>
       <S.ImageBox>
         <img src={img} alt={title} />
       </S.ImageBox>
     </Link>
     <S.Content>
-      <Link href={`/game/${slug}`} passHref>
+      <Link href={`/post/${slug}`} passHref>
         <S.Info>
           <S.Title>{title}</S.Title>
           <S.Description>{description}</S.Description>

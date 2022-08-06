@@ -2,7 +2,7 @@
 export default [
   {
     title: 'DIREITO Á MORADIA',
-    slug: 'noticia-1',
+    slug: 'democracia-teste',
     description:
       'Moradores da Vila Nazaré pedem que CCDH acompanhe processo de realocação das famílias',
     img: 'https://source.unsplash.com/user/willianjusten/1300x640',
