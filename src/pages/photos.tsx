@@ -4,7 +4,7 @@ export default function NewsPage(props: PhotosTemplateProps) {
   return <PhotosTemplate {...props} />
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   return {
     props: {
       photos: [
