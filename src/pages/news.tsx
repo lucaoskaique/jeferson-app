@@ -10,7 +10,13 @@ export default function NewsPage(props: NewsPageTemplateProps) {
 export async function getStaticProps() {
   const apolloClient = initializeApollo()
 
-  const { data } = await apolloClient.query({ query: QUERY_NEWS })
+  const { data } = await apolloClient.query({
+    query: QUERY_NEWS,
+    variables: {
+      page: 1,
+      pageSize: 1
+    }
+  })
 
   if (data === null) {
     return {
