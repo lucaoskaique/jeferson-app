@@ -14,7 +14,7 @@ export async function getStaticProps() {
     query: QUERY_NEWS,
     variables: {
       page: 1,
-      pageSize: 1
+      pageSize: 20
     }
   })
 

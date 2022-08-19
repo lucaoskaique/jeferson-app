@@ -1,48 +1,33 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { gql } from '@apollo/client'
 import aboutSectionMock from 'components/About/mock'
 import bannersMock from 'components/Banner/mock'
 import heroPropsVideos from 'components/Hero/mock'
 import imageSliderMock from 'components/ImageCardSlider/mock'
 import newsSliderMock from 'components/NewsCardSlider/mock'
 import videoCardMock from 'components/VideoCard/mock'
+import { QUERY_HOME } from 'graphql/queries/home'
 import Home from 'templates/Home'
 import { initializeApollo } from 'utils/apollo'
 
-const QUERY_HOME = gql`
-  query getInfo {
-    homePage {
-      data {
-        id
-        attributes {
-          menu {
-            socialLinks {
-              title
-              url
-            }
-          }
-          sectionAbout {
-            title
-            description
-          }
-        }
-      }
-    }
-  }
-`
 export default function Index(props: any) {
   if (props.data) return <p>{JSON.stringify(props.data, null, 2)}</p>
   return <Home {...props} />
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const apolloClient = initializeApollo()
 
-  const { data } = await apolloClient.query<any>({ query: QUERY_HOME })
+  const { data } = await apolloClient.query({ query: QUERY_HOME })
+
+  if (data === null) {
+    return {
+      props: {}
+    }
+  }
 
   return {
     props: {
-      data: data,
+      data: data.homePage.data,
       initialApolloState: apolloClient.cache.extract(),
       banner: bannersMock,
       videoCards: videoCardMock,
