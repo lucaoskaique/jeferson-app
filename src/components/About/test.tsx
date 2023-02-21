@@ -4,7 +4,8 @@ import { renderWithTheme } from 'utils/tests/helpers'
 import About from '.'
 const props = {
   title: 'DIREITO Á MORADIA',
-  img: 'https://source.unsplash.com/user/willianjusten/300x140'
+  img: 'https://source.unsplash.com/user/willianjusten/300x140',
+  description: 'teste'
 }
 describe('<About />', () => {
   it('should render the heading', () => {

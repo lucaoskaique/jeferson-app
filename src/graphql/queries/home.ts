@@ -15,6 +15,14 @@ export const QUERY_HOME = gql`
           sectionAbout {
             title
             description
+            media {
+              data {
+                attributes {
+                  name
+                  url
+                }
+              }
+            }
           }
         }
       }

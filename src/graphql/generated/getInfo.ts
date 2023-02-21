@@ -20,10 +20,27 @@ export interface getInfo_homePage_data_attributes_menu {
   socialLinks: getInfo_homePage_data_attributes_menu_socialLinks[];
 }
 
+export interface getInfo_homePage_data_attributes_sectionAbout_media_data_attributes {
+  __typename: "UploadFile";
+  name: string;
+  url: string;
+}
+
+export interface getInfo_homePage_data_attributes_sectionAbout_media_data {
+  __typename: "UploadFileEntity";
+  attributes: getInfo_homePage_data_attributes_sectionAbout_media_data_attributes | null;
+}
+
+export interface getInfo_homePage_data_attributes_sectionAbout_media {
+  __typename: "UploadFileEntityResponse";
+  data: getInfo_homePage_data_attributes_sectionAbout_media_data | null;
+}
+
 export interface getInfo_homePage_data_attributes_sectionAbout {
   __typename: "ComponentPageSectionAbout";
   title: string;
   description: string;
+  media: getInfo_homePage_data_attributes_sectionAbout_media | null;
 }
 
 export interface getInfo_homePage_data_attributes {

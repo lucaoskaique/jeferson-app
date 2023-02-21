@@ -24,9 +24,7 @@ const MediasTemplate = ({
             Medias
           </Heading>
           <S.Subtitle>
-            Para falar com o Deputado Jeferson Fernandes preencha
-            <br />
-            os campos do formulário abaixo que prontamente reponderemos.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
           </S.Subtitle>
         </div>
       </S.CoverContent>
