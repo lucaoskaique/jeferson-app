@@ -13,10 +13,11 @@ export const Text = styled.div`
     }
   `}
 `
-export const Subtext = styled.div`
+export const Subtext = styled.a`
   ${({ theme }) => css`
     margin-top: ${theme.spacings.xxsmall};
     text-align: right;
+    text-decoration: none;
   `}
 `
 

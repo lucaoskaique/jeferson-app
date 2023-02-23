@@ -23,7 +23,10 @@ describe('<NewsCard />', () => {
     expect(
       screen.getByRole('heading', { name: props.description })
     ).toBeInTheDocument()
-
+    expect(screen.getByRole('link', { name: props.title })).toHaveAttribute(
+      'href',
+      `/post/${props.slug}`
+    )
     expect(screen.getByRole('img', { name: props.title })).toBeInTheDocument()
   })
 })

@@ -17,15 +17,13 @@ const Showcase = ({ title, children, page }: ShowcaseProps) => (
       </Heading>
     </S.Text>
     <S.Content>{children}</S.Content>
-    <S.Subtext>
-      <Link href={`/${page}`} passHref>
-        <a>
-          <Heading size="small" color="primary">
-            {`Veja todos os ${title}`}
-          </Heading>
-        </a>
-      </Link>
-    </S.Subtext>
+    <Link href={`/${page}`} passHref>
+      <S.Subtext>
+        <Heading size="small" color="primary">
+          {`Veja todos os ${title}`}
+        </Heading>
+      </S.Subtext>
+    </Link>
   </S.Wrapper>
 )
 

@@ -64,4 +64,6 @@ export interface getNews {
 export interface getNewsVariables {
   page?: number | null;
   pageSize?: number | null;
+  start?: number | null;
+  limit?: number | null;
 }

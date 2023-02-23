@@ -9,7 +9,7 @@ import { QUERY_VIDEOS } from 'graphql/queries/video'
 import MediasTemplate, { MediasTemplateProps } from 'templates/Medias'
 import { initializeApollo } from 'utils/apollo'
 
-export default function GamesPage(props: MediasTemplateProps) {
+export default function MediasPage(props: MediasTemplateProps) {
   return <MediasTemplate {...props} />
 }
 
@@ -63,19 +63,19 @@ export async function getStaticProps() {
       audios: [
         {
           title: 'Foto 1',
-          img: 'https://picsum.photos/id/6/400/300'
+          img: '/img/audio-vector.jpg'
         },
         {
           title: 'Foto 2',
-          img: 'https://picsum.photos/id/7/400/600'
+          img: '/img/audio-vector.jpg'
         },
         {
           title: 'Foto 3',
-          img: 'https://picsum.photos/id/8/400/500'
+          img: '/img/audio-vector.jpg'
         },
         {
           title: 'Foto 4',
-          img: 'https://picsum.photos/id/9/400/400'
+          img: '/img/audio-vector.jpg'
         }
       ],
       // audios: audiosProps.audios?.data.map((audio) => ({

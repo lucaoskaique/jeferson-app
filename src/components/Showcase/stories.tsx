@@ -6,7 +6,8 @@ export default {
   title: 'Showcase',
   component: Showcase,
   args: {
-    title: 'Fotos'
+    title: 'Fotos',
+    slug: 'fotos'
   },
   parameters: {
     layout: 'fullscreen',

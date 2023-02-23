@@ -28,9 +28,11 @@ const NewsCard = ({ slug, title, description, date, img }: NewsCardProps) => (
       </Link>
       <S.ReadMoreBox>
         <S.Date>{date}</S.Date>
-        <Button textColor="white" size="small">
-          leia mais
-        </Button>
+        <Link href={`/post/${slug}`} passHref>
+          <Button textColor="white" size="small">
+            leia mais
+          </Button>
+        </Link>
       </S.ReadMoreBox>
     </S.Content>
   </S.Wrapper>
