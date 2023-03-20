@@ -1,4 +1,5 @@
-import { gql } from '@apollo/client'
+import { gql, QueryHookOptions, useQuery } from '@apollo/client'
+import { getNews, getNewsVariables } from 'graphql/generated/getNews'
 
 export const QUERY_NEWS = gql`
   query getNews($page: Int, $pageSize: Int, $start: Int, $limit: Int) {
@@ -87,3 +88,8 @@ export const QUERY_NEWS_BY_SLUG = gql`
     }
   }
 `
+export function useQueryNews(
+  options?: QueryHookOptions<getNews, getNewsVariables>
+) {
+  return useQuery<getNews, getNewsVariables>(QUERY_NEWS, options)
+}

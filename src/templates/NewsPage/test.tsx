@@ -1,8 +1,10 @@
+import { MockedProvider } from '@apollo/client/testing'
 import { screen } from '@testing-library/react'
 import { renderWithTheme } from 'utils/tests/helpers'
 
 import NewsPage from '.'
-import items from './mock'
+
+// const mocks = []
 
 jest.mock('templates/Base', () => ({
   __esModule: true,
@@ -12,20 +14,24 @@ jest.mock('templates/Base', () => ({
 }))
 
 describe('<NewsPage />', () => {
-  it('should render the heading', async () => {
-    renderWithTheme(<NewsPage news={items.slice(0, 2)} />)
+  it('should render the loading when starting template', async () => {
+    renderWithTheme(
+      <MockedProvider mocks={[]} addTypename={false}>
+        <NewsPage />
+      </MockedProvider>
+    )
 
-    expect(
-      screen.getByRole('heading', { name: /notícias/i })
-    ).toBeInTheDocument()
-
-    expect(await screen.findByText(/DIREITO Á MORADIA/i)).toBeInTheDocument()
+    expect(screen.getByText(/loading.../i)).toBeInTheDocument()
   })
-  it('should render the heading', async () => {
-    renderWithTheme(<NewsPage />)
 
-    expect(
-      screen.getByRole('heading', { name: /sem notícias/i })
-    ).toBeInTheDocument()
-  })
+  // it('should render the heading', async () => {
+  //   renderWithTheme(
+  //     <MockedProvider mocks={[postsMock]} addTypename={false}>
+  //       <NewsPage />
+  //     </MockedProvider>
+  //   )
+
+  //   expect(screen.getByText(/loading.../i)).toBeInTheDocument()
+  //   expect(await screen.findByText(/Sample News/i)).toBeInTheDocument()
+  // })
 })

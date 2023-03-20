@@ -4,7 +4,10 @@ import {
   InMemoryCache,
   NormalizedCacheObject
 } from '@apollo/client'
+import { concatPagination } from '@apollo/client/utilities'
 import { useMemo } from 'react'
+
+// import apolloCache from './apolloCache'
 
 let apolloClient: ApolloClient<NormalizedCacheObject>
 
@@ -12,9 +15,17 @@ function createApolloClient() {
   return new ApolloClient({
     ssrMode: typeof window === 'undefined',
     link: new HttpLink({
-      uri: 'http://localhost:1337/graphql/'
+      uri: `http://strapi-env-1.eba-w8mvhmpe.sa-east-1.elasticbeanstalk.com/graphql`
     }),
-    cache: new InMemoryCache()
+    cache: new InMemoryCache({
+      typePolicies: {
+        Query: {
+          fields: {
+            posts: concatPagination()
+          }
+        }
+      }
+    })
   })
 }
 

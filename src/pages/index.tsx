@@ -66,6 +66,7 @@ export async function getStaticProps() {
 
   return {
     props: {
+      revalidate: 10,
       initialApolloState: apolloClient.cache.extract(),
       banner: bannersMock,
       videoCards: videoCardMock,

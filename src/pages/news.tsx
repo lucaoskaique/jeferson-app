@@ -1,4 +1,4 @@
-import { getNews } from 'graphql/generated/getNews'
+import { getNews, getNewsVariables } from 'graphql/generated/getNews'
 import { QUERY_NEWS } from 'graphql/queries/news'
 import NewsPageTemplate, { NewsPageTemplateProps } from 'templates/NewsPage'
 import { initializeApollo } from 'utils/apollo'
@@ -11,37 +11,17 @@ export default function NewsPage(props: NewsPageTemplateProps) {
 export async function getStaticProps() {
   const apolloClient = initializeApollo()
 
-  const { data } = await apolloClient.query<getNews>({
+  await apolloClient.query<getNews, getNewsVariables>({
     query: QUERY_NEWS,
     variables: {
-      page: 1,
-      pageSize: 20
+      limit: 10
     }
   })
-
-  if (data === null) {
-    return {
-      props: {}
-    }
-  }
-
-  const news = data?.posts?.data.map((post) => ({
-    title: post?.attributes?.title,
-    description: post?.attributes?.short_description,
-    slug: post?.attributes?.slug,
-    content: post?.attributes?.content,
-    img: `http://localhost:1337${post?.attributes?.cover?.data?.attributes?.url}`,
-    date: new Intl.DateTimeFormat('pt-BR', {
-      day: 'numeric',
-      month: 'short',
-      year: 'numeric'
-    }).format(new Date(post?.attributes?.publishedAt))
-  }))
 
   return {
     props: {
       revalidate: 60,
-      news: news
+      initialApolloState: apolloClient.cache.extract()
     }
   }
 }

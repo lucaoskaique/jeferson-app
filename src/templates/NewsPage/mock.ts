@@ -1,67 +1,73 @@
-/* eslint-disable import/no-anonymous-default-export */
-export default [
-  {
-    title: 'DIREITO Á MORADIA',
-    slug: 'democracia-teste',
-    description:
-      'Moradores da Vila Nazaré pedem que CCDH acompanhe processo de realocação das famílias',
-    img: 'https://source.unsplash.com/user/willianjusten/1300x640',
-    date: '28 de novembro de 2021'
+import { QUERY_NEWS } from 'graphql/queries/news'
+
+export const nopostsMock = {
+  request: {
+    query: QUERY_NEWS,
+    variables: { limit: 10 }
   },
-  {
-    title: 'Notícia 2',
-    slug: 'noticia-2',
-    description:
-      'Moradores da Vila Nazaré pedem que CCDH acompanhe processo de realocação das famílias',
-    img: 'https://source.unsplash.com/user/willianjusten/1300x640',
-    date: '28 de novembro de 2021'
-  },
-  {
-    title: 'Notícia 3',
-    slug: 'noticia-3',
-    description:
-      'Moradores da Vila Nazaré pedem que CCDH acompanhe processo de realocação das famílias',
-    img: 'https://source.unsplash.com/user/willianjusten/1300x640',
-    date: '28 de novembro de 2021'
-  },
-  {
-    title: 'Notícia 4',
-    slug: 'noticia-4',
-    description:
-      'Moradores da Vila Nazaré pedem que CCDH acompanhe processo de realocação das famílias',
-    img: 'https://source.unsplash.com/user/willianjusten/1300x640',
-    date: '28 de novembro de 2021'
-  },
-  {
-    title: 'Notícia 5',
-    slug: 'noticia-5',
-    description:
-      'Moradores da Vila Nazaré pedem que CCDH acompanhe processo de realocação das famílias',
-    img: 'https://source.unsplash.com/user/willianjusten/1300x640',
-    date: '28 de novembro de 2021'
-  },
-  {
-    title: 'Notícia 6',
-    slug: 'noticia-6',
-    description:
-      'Moradores da Vila Nazaré pedem que CCDH acompanhe processo de realocação das famílias',
-    img: 'https://source.unsplash.com/user/willianjusten/1300x640',
-    date: '28 de novembro de 2021'
-  },
-  {
-    title: 'Notícia 7',
-    slug: 'noticia-7',
-    description:
-      'Moradores da Vila Nazaré pedem que CCDH acompanhe processo de realocação das famílias',
-    img: 'https://source.unsplash.com/user/willianjusten/1300x640',
-    date: '28 de novembro de 2021'
-  },
-  {
-    title: 'Notícia 8',
-    slug: 'noticia-8',
-    description:
-      'Moradores da Vila Nazaré pedem que CCDH acompanhe processo de realocação das famílias',
-    img: 'https://source.unsplash.com/user/willianjusten/1300x640',
-    date: '28 de novembro de 2021'
+  result: {
+    data: {
+      posts: [],
+      postsConnection: {
+        values: [],
+        __typename: 'GameConnection'
+      }
+    }
   }
-]
+}
+
+export const postsMock = {
+  request: {
+    query: QUERY_NEWS,
+    variables: { limit: 10 }
+  },
+  result: {
+    data: {
+      posts: [
+        {
+          id: '1',
+          name: 'Sample News',
+          slug: 'sample-News',
+          price: 518.39,
+          developers: [{ name: 'sample developer' }],
+          cover: {
+            url: 'sample-News.jpg'
+          },
+          __typename: 'News'
+        }
+      ],
+      postsConnection: {
+        values: [{ id: '1' }, { id: '2' }],
+        __typename: 'GameConnection'
+      }
+    }
+  }
+}
+
+export const fetchMoreMock = {
+  request: {
+    query: QUERY_NEWS,
+    variables: { limit: 10, where: {}, start: 1 }
+  },
+  result: {
+    data: {
+      posts: [
+        {
+          id: '2',
+          name: 'Fetch More Game',
+          slug: 'fetch-more',
+          price: 518.39,
+          developers: [{ name: 'sample developer' }],
+          cover: {
+            url: 'sample-game.jpg'
+          },
+          __typename: 'Game'
+        }
+      ],
+      postsConnection: {
+        values: [{ id: '1' }, { id: '2' }],
+        __typename: 'GameConnection'
+      }
+    }
+  }
+}
