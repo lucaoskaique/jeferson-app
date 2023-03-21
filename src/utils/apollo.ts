@@ -1,15 +1,9 @@
-import {
-  ApolloClient,
-  HttpLink,
-  InMemoryCache,
-  NormalizedCacheObject
-} from '@apollo/client'
-import { concatPagination } from '@apollo/client/utilities'
+import { ApolloClient, HttpLink, NormalizedCacheObject } from '@apollo/client'
 import { useMemo } from 'react'
 
-// import apolloCache from './apolloCache'
+import apolloCache from './apolloCache'
 
-let apolloClient: ApolloClient<NormalizedCacheObject>
+let apolloClient: ApolloClient<NormalizedCacheObject> | null
 
 function createApolloClient() {
   return new ApolloClient({
@@ -17,19 +11,11 @@ function createApolloClient() {
     link: new HttpLink({
       uri: `http://strapi-env-1.eba-w8mvhmpe.sa-east-1.elasticbeanstalk.com/graphql`
     }),
-    cache: new InMemoryCache({
-      typePolicies: {
-        Query: {
-          fields: {
-            posts: concatPagination()
-          }
-        }
-      }
-    })
+    cache: apolloCache
   })
 }
 
-export function initializeApollo(initialState = {}) {
+export function initializeApollo(initialState = null) {
   // If the state is passed in, use it to create the client.
   const apolloClientGlobal = apolloClient ?? createApolloClient()
 

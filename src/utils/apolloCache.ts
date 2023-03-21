@@ -5,16 +5,7 @@ export default new InMemoryCache({
   typePolicies: {
     Query: {
       fields: {
-        posts: concatPagination(['where', 'sort'])
-      }
-    },
-    Wishlist: {
-      fields: {
-        posts: {
-          merge(_, incoming) {
-            return incoming
-          }
-        }
+        posts: concatPagination(['filters'])
       }
     }
   }

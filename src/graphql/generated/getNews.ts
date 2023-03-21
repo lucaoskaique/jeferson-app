@@ -66,4 +66,5 @@ export interface getNewsVariables {
   pageSize?: number | null;
   start?: number | null;
   limit?: number | null;
+  category?: string | null;
 }

@@ -1,5 +1,6 @@
 import { MockedProvider } from '@apollo/client/testing'
 import { screen } from '@testing-library/react'
+import apolloCache from 'utils/apolloCache'
 import { renderWithTheme } from 'utils/tests/helpers'
 
 import NewsPage from '.'
@@ -16,7 +17,7 @@ jest.mock('templates/Base', () => ({
 describe('<NewsPage />', () => {
   it('should render the loading when starting template', async () => {
     renderWithTheme(
-      <MockedProvider mocks={[]} addTypename={false}>
+      <MockedProvider mocks={[]} cache={apolloCache} addTypename={false}>
         <NewsPage />
       </MockedProvider>
     )
@@ -26,7 +27,7 @@ describe('<NewsPage />', () => {
 
   // it('should render the heading', async () => {
   //   renderWithTheme(
-  //     <MockedProvider mocks={[postsMock]} addTypename={false}>
+  //     <MockedProvider mocks={[postsMock]} cache={apolloCache} >
   //       <NewsPage />
   //     </MockedProvider>
   //   )

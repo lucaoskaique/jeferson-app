@@ -2,7 +2,13 @@ import { gql, QueryHookOptions, useQuery } from '@apollo/client'
 import { getNews, getNewsVariables } from 'graphql/generated/getNews'
 
 export const QUERY_NEWS = gql`
-  query getNews($page: Int, $pageSize: Int, $start: Int, $limit: Int) {
+  query getNews(
+    $page: Int
+    $pageSize: Int
+    $start: Int
+    $limit: Int
+    $category: String
+  ) {
     posts(
       pagination: {
         page: $page
@@ -10,6 +16,7 @@ export const QUERY_NEWS = gql`
         start: $start
         limit: $limit
       }
+      filters: { categories: { slug: { eq: $category } } }
     ) {
       data {
         id
@@ -39,7 +46,6 @@ export const QUERY_NEWS = gql`
     }
   }
 `
-
 export const QUERY_NEWS_BY_ID = gql`
   query getNewsById($id: ID) {
     post(id: $id) {
