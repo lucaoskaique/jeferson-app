@@ -34,7 +34,7 @@ export function initializeApollo(initialState = null) {
 }
 
 //Hook to create an Apollo Client on the server and the browser.
-export function useApollo(initialState = {}) {
+export function useApollo(initialState = null) {
   const store = useMemo(() => initializeApollo(initialState), [initialState])
   return store
 }

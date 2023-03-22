@@ -24,7 +24,7 @@ const Banner = ({ backgroundImage, floatImage, title }: BannerProps) => (
     {/* <img src={backgroundImage} alt={`${title} background`} /> */}
     {!!floatImage && (
       <S.FloatImageWrapper>
-        {/* <Image src={floatImage} alt={title} width={400} height={300} /> */}
+        {/* <Image src={floatImage} alt={title} layout="fill" /> */}
         <img src={floatImage} alt={`${title} background`} />
       </S.FloatImageWrapper>
     )}

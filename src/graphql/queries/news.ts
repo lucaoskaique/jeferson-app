@@ -7,7 +7,7 @@ export const QUERY_NEWS = gql`
     $pageSize: Int
     $start: Int
     $limit: Int
-    $category: String
+    $category: PostFiltersInput
   ) {
     posts(
       pagination: {
@@ -16,7 +16,7 @@ export const QUERY_NEWS = gql`
         start: $start
         limit: $limit
       }
-      filters: { categories: { slug: { eq: $category } } }
+      filters: $category
     ) {
       data {
         id
@@ -25,6 +25,15 @@ export const QUERY_NEWS = gql`
           slug
           short_description
           content
+          categories {
+            data {
+              id
+              attributes {
+                name
+                slug
+              }
+            }
+          }
           cover {
             data {
               attributes {
@@ -80,6 +89,15 @@ export const QUERY_NEWS_BY_SLUG = gql`
           slug
           short_description
           content
+          categories {
+            data {
+              id
+              attributes {
+                name
+                slug
+              }
+            }
+          }
           cover {
             data {
               attributes {

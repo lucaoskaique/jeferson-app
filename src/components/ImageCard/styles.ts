@@ -15,8 +15,9 @@ export const Wrapper = styled.div`
 `
 
 export const ImageBox = styled.div`
-  height: 42rem;
+  min-height: 42rem;
   width: 100%;
+  position: relative;
   background: #f6f7f8;
   background-image: linear-gradient(
     to right,
@@ -29,8 +30,6 @@ export const ImageBox = styled.div`
   animation: placeholderShimmer 1s linear infinite forwards;
 
   img {
-    width: 100%;
-    height: 100%;
     object-fit: cover;
   }
 

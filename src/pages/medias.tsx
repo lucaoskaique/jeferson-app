@@ -54,11 +54,11 @@ export async function getStaticProps() {
     props: {
       photos: galeriesProps.galeries?.data.map((galery) => ({
         title: galery.attributes?.title,
-        img: `http://localhost:1337${galery.attributes?.media?.data[0]?.attributes?.url}`
+        img: `${galery.attributes?.media?.data[0]?.attributes?.url}`
       })),
       videos: videosProps.videos?.data.map((video) => ({
         title: video.attributes?.title,
-        img: `http://localhost:1337${video.attributes?.image.data?.attributes?.url}`
+        img: `${video.attributes?.image.data?.attributes?.url}`
       })),
       audios: [
         {

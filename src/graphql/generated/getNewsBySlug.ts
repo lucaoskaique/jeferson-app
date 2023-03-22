@@ -7,6 +7,23 @@
 // GraphQL query operation: getNewsBySlug
 // ====================================================
 
+export interface getNewsBySlug_posts_data_attributes_categories_data_attributes {
+  __typename: "Category";
+  name: string;
+  slug: string;
+}
+
+export interface getNewsBySlug_posts_data_attributes_categories_data {
+  __typename: "CategoryEntity";
+  id: string | null;
+  attributes: getNewsBySlug_posts_data_attributes_categories_data_attributes | null;
+}
+
+export interface getNewsBySlug_posts_data_attributes_categories {
+  __typename: "CategoryRelationResponseCollection";
+  data: getNewsBySlug_posts_data_attributes_categories_data[];
+}
+
 export interface getNewsBySlug_posts_data_attributes_cover_data_attributes {
   __typename: "UploadFile";
   name: string;
@@ -29,6 +46,7 @@ export interface getNewsBySlug_posts_data_attributes {
   slug: string;
   short_description: string;
   content: string;
+  categories: getNewsBySlug_posts_data_attributes_categories | null;
   cover: getNewsBySlug_posts_data_attributes_cover | null;
   publishedAt: any | null;
 }

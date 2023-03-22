@@ -48,8 +48,10 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     query: QUERY_NEWS_BY_SLUG,
     variables: {
       slug: `${params?.slug}`
-    }
+    },
+    fetchPolicy: 'no-cache'
   })
+
   if (!data.posts?.data.length) {
     return {
       notFound: true
@@ -63,8 +65,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   }
 
   return {
+    revalidate: 60 * 60,
     props: {
-      revalidate: 60,
       post: post,
       newsSlider: newsSliderMock
     }

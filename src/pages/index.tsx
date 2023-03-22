@@ -21,7 +21,8 @@ export async function getStaticProps() {
   const apolloClient = initializeApollo()
 
   const { data: infoData } = await apolloClient.query<getInfo>({
-    query: QUERY_HOME
+    query: QUERY_HOME,
+    fetchPolicy: 'no-cache'
   })
 
   const { data: newsProps } = await apolloClient.query<getNews>({
@@ -29,7 +30,8 @@ export async function getStaticProps() {
     variables: {
       page: 1,
       pageSize: 20
-    }
+    },
+    fetchPolicy: 'no-cache'
   })
 
   const { data: galeryProps } = await apolloClient.query<getGaleries>({
@@ -37,7 +39,8 @@ export async function getStaticProps() {
     variables: {
       page: 1,
       pageSize: 20
-    }
+    },
+    fetchPolicy: 'no-cache'
   })
 
   const news = newsProps.posts?.data?.map((post) => ({
@@ -45,7 +48,7 @@ export async function getStaticProps() {
     description: post.attributes?.short_description,
     slug: post.attributes?.slug,
     content: post.attributes?.content,
-    img: `http://localhost:1337${post.attributes?.cover?.data?.attributes?.url}`,
+    img: `${post.attributes?.cover?.data?.attributes?.url}`,
     date: new Intl.DateTimeFormat('pt-BR', {
       day: 'numeric',
       month: 'short',
@@ -55,18 +58,18 @@ export async function getStaticProps() {
 
   const aboutSection = {
     title: infoData.homePage?.data?.attributes?.sectionAbout.title,
-    img: `http://localhost:1337${infoData.homePage?.data?.attributes?.sectionAbout.media?.data?.attributes?.url}`,
+    img: `${infoData.homePage?.data?.attributes?.sectionAbout.media?.data?.attributes?.url}`,
     description: infoData.homePage?.data?.attributes?.sectionAbout.description
   }
 
   const imageSlider = galeryProps.galeries?.data?.map((galery) => ({
     title: galery.attributes?.title,
-    img: `http://localhost:1337${galery.attributes?.media?.data[0]?.attributes?.url}`
+    img: `${galery.attributes?.media?.data[0]?.attributes?.url}`
   }))
 
   return {
+    revalidate: 60,
     props: {
-      revalidate: 10,
       initialApolloState: apolloClient.cache.extract(),
       banner: bannersMock,
       videoCards: videoCardMock,

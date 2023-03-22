@@ -3,9 +3,28 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
+import { PostFiltersInput } from "./globalTypes";
+
 // ====================================================
 // GraphQL query operation: getNews
 // ====================================================
+
+export interface getNews_posts_data_attributes_categories_data_attributes {
+  __typename: "Category";
+  name: string;
+  slug: string;
+}
+
+export interface getNews_posts_data_attributes_categories_data {
+  __typename: "CategoryEntity";
+  id: string | null;
+  attributes: getNews_posts_data_attributes_categories_data_attributes | null;
+}
+
+export interface getNews_posts_data_attributes_categories {
+  __typename: "CategoryRelationResponseCollection";
+  data: getNews_posts_data_attributes_categories_data[];
+}
 
 export interface getNews_posts_data_attributes_cover_data_attributes {
   __typename: "UploadFile";
@@ -29,6 +48,7 @@ export interface getNews_posts_data_attributes {
   slug: string;
   short_description: string;
   content: string;
+  categories: getNews_posts_data_attributes_categories | null;
   cover: getNews_posts_data_attributes_cover | null;
   publishedAt: any | null;
 }
@@ -66,5 +86,5 @@ export interface getNewsVariables {
   pageSize?: number | null;
   start?: number | null;
   limit?: number | null;
-  category?: string | null;
+  category?: PostFiltersInput | null;
 }

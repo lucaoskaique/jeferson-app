@@ -13,6 +13,12 @@ module.exports = withPWA({
     disable: !isProd
   },
   images: {
-    domains: ['localhost', 'res.cloudinary.com']
+    domains: [
+      'localhost',
+      'jefersonfernandes-assets.s3.sa-east-1.amazonaws.com'
+    ]
+  },
+  future: {
+    webpack5: true
   }
 })

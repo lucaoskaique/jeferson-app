@@ -14,6 +14,13 @@ jest.mock('templates/Base', () => ({
   }
 }))
 
+jest.mock('next/link', () => ({
+  __esModule: true,
+  default: function Mock({ children }: { children: React.ReactNode }) {
+    return <div data-testid="Mock Link">{children}</div>
+  }
+}))
+
 describe('<NewsPage />', () => {
   it('should render the loading when starting template', async () => {
     renderWithTheme(

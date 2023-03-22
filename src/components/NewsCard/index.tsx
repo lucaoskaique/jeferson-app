@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import Button from 'components/Button'
+import Image from 'next/image'
 import Link from 'next/link'
 
 import * as S from './styles'
@@ -16,7 +17,8 @@ const NewsCard = ({ slug, title, description, date, img }: NewsCardProps) => (
   <S.Wrapper>
     <Link href={`/post/${slug}`} passHref>
       <S.ImageBox>
-        <img src={img} alt={title} />
+        <Image src={img} alt={title} layout="fill" />
+        {/* <img src={img} alt={title} /> */}
       </S.ImageBox>
     </Link>
     <S.Content>

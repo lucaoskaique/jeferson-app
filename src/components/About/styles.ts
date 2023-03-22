@@ -12,7 +12,7 @@ export const Content = styled.div`
     height: 100%;
 
     ${media.greaterThan('medium')`
-      flex-direction: row;    
+      flex-direction: row;
     `}
   `}
 `
@@ -26,7 +26,7 @@ export const ImageBox = styled.div`
   width: 100%;
   height: 22rem;
 
-  ${media.greaterThan('medium')`      
+  ${media.greaterThan('medium')`
     height: 41rem;
     width: 30rem;
   `}
@@ -39,8 +39,8 @@ export const Info = styled.div`
     margin-left: 0;
     margin-bottom: ${theme.spacings.medium};
 
-    ${media.greaterThan('medium')`     
-      margin-left: ${theme.spacings.medium};        
+    ${media.greaterThan('medium')`
+      margin-left: ${theme.spacings.medium};
     `}
   `}
 `
@@ -51,7 +51,7 @@ export const Title = styled.div`
   `}
 `
 
-export const Description = styled.p`
+export const Description = styled.div`
   text-align: justify;
   text-justify: inter-word;
 
@@ -66,7 +66,7 @@ export const BoxButton = styled.div`
       margin-bottom: ${theme.spacings.xsmall};
     }
 
-    ${media.greaterThan('medium')`  
+    ${media.greaterThan('medium')`
       display: flex;
       gap: 1rem;
       justify-content: space-between;

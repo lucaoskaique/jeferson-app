@@ -1,4 +1,5 @@
-export const aboutSectionMapper = (data) => ({
+/* eslint-disable @typescript-eslint/no-explicit-any */
+export const aboutSectionMapper = (data: any) => ({
   title: data.title,
   description: data.description,
   image: {

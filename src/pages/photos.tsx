@@ -1,5 +1,5 @@
 import { getGaleryById } from 'graphql/generated/getGaleryById'
-import { QUERY_GALERY_BY_ID } from 'graphql/queries/galery'
+import { QUERY_GALERIES } from 'graphql/queries/galery'
 import PhotosTemplate, { PhotosTemplateProps } from 'templates/Photos'
 import { initializeApollo } from 'utils/apollo'
 
@@ -8,14 +8,11 @@ export default function NewsPage(props: PhotosTemplateProps) {
   return <PhotosTemplate {...props} />
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const apolloClient = initializeApollo()
 
   const { data } = await apolloClient.query<getGaleryById>({
-    query: QUERY_GALERY_BY_ID,
-    variables: {
-      id: 2
-    }
+    query: QUERY_GALERIES
   })
 
   if (data === null) {
@@ -29,7 +26,7 @@ export async function getStaticProps() {
       data: data.galery?.data,
       photos: data.galery?.data?.attributes?.media?.data.map((photo) => ({
         title: photo.attributes?.name,
-        img: `http://localhost:1337${photo.attributes?.url}`
+        img: `${photo.attributes?.url}`
       }))
     }
   }

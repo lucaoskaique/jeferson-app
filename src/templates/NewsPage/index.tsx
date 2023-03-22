@@ -4,23 +4,31 @@ import { Grid } from 'components/Grid'
 import Heading from 'components/Heading'
 import NewsCard, { NewsCardProps } from 'components/NewsCard'
 import { useQueryNews } from 'graphql/queries/news'
+// import { useRouter } from 'next/router'
+// import { ParsedUrlQueryInput } from 'querystring'
 import Base from 'templates/Base'
 
 import * as S from './styles'
 
 export type NewsPageTemplateProps = {
-  news?: NewsCardProps[]
-  filterItems?: string[]
+  filterItems?: string
 }
 
 const NewsPageTemplate = () => {
+  // const { push, query } = useRouter()
+
   const { data } = useQueryNews({
     variables: { limit: 10 }
   })
 
-  if (!data) return <p>loading...</p>
+  if (!data?.posts?.data) return <p>loading...</p>
 
-  const news = data?.posts?.data.map((post) => ({
+  const { posts } = data
+
+  // const hasMorePosts =
+  //   posts.meta.pagination.total < (posts.meta.pagination.total || 0)
+
+  const news = posts.data.map((post) => ({
     title: post?.attributes?.title,
     description: post?.attributes?.short_description,
     slug: post?.attributes?.slug,
@@ -33,7 +41,11 @@ const NewsPageTemplate = () => {
     }).format(new Date(post?.attributes?.publishedAt))
   })) as NewsCardProps[]
 
-  // const handleFilter = () => {
+  // const handleFilter = (items: ParsedUrlQueryInput) => {
+  //   push({
+  //     pathname: '/games',
+  //     query: items
+  //   })
   //   return
   // }
 
