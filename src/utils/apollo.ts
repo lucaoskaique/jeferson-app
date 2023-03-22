@@ -9,7 +9,7 @@ function createApolloClient() {
   return new ApolloClient({
     ssrMode: typeof window === 'undefined',
     link: new HttpLink({
-      uri: `http://strapi-env-1.eba-w8mvhmpe.sa-east-1.elasticbeanstalk.com/graphql`
+      uri: `${process.env.NEXT_PUBLIC_API_URL}/graphql`
     }),
     cache: apolloCache
   })
