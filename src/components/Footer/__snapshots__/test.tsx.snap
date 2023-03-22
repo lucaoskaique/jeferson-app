@@ -51,7 +51,7 @@ exports[`<Footer /> should render 4 column topics 1`] = `
   -webkit-text-decoration: none;
   text-decoration: none;
   margin-bottom: 0.8rem;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
 }
 
 .c1 a {
@@ -129,6 +129,7 @@ exports[`<Footer /> should render 4 column topics 1`] = `
     class="c0"
   >
     <div
+      aria-labelledby="social-media"
       class="c1"
     >
       <div
@@ -342,7 +343,7 @@ exports[`<Footer /> should render 4 column topics 1`] = `
           class="c5"
         >
           <a
-            href="/cart"
+            href="https://www.facebook.com/DepJeferson/"
           >
             <svg
               aria-hidden="true"
@@ -363,7 +364,7 @@ exports[`<Footer /> should render 4 column topics 1`] = `
           class="c5"
         >
           <a
-            href="/cart"
+            href="https://www.instagram.com/depjeferson/"
           >
             <svg
               aria-hidden="true"
@@ -391,7 +392,7 @@ exports[`<Footer /> should render 4 column topics 1`] = `
           class="c5"
         >
           <a
-            href="/cart"
+            href="https://twitter.com/DepJeferson"
           >
             <svg
               aria-hidden="true"
@@ -410,6 +411,7 @@ exports[`<Footer /> should render 4 column topics 1`] = `
       </div>
     </div>
     <div
+      aria-labelledby="site-map"
       class="c1"
     >
       <a>
@@ -438,6 +440,7 @@ exports[`<Footer /> should render 4 column topics 1`] = `
       </a>
     </div>
     <div
+      aria-labelledby="links-importantes"
       class="c1"
     >
       <h2
@@ -464,9 +467,10 @@ exports[`<Footer /> should render 4 column topics 1`] = `
     </div>
   </div>
   <div
+    aria-labelledby="copyright"
     class="c8"
   >
-    Deputado Jeferson Fernandes 2022 © All rights reserved.
+    Deputado Jeferson Fernandes 2023 © All rights reserved.
   </div>
 </main>
 `

@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
     color: ${theme.colors.black};
     ${media.greaterThan('medium')`
       background: ${theme.colors.mainBg};
-      padding: ${theme.spacings.xsmall};      
+      padding: ${theme.spacings.xsmall};
     `}
     h1,
     h2,
@@ -43,5 +43,13 @@ export const Title = styled.div`
     h4 {
       color: ${theme.colors.black};
     }
+  `}
+`
+
+export const ImageBox = styled.div`
+  ${() => css`
+    min-height: 42rem;
+    width: 100%;
+    position: relative;
   `}
 `

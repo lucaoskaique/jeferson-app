@@ -1,4 +1,3 @@
-import newsSliderMock from 'components/NewsCardSlider/mock'
 // import { TextContentProps } from 'components/TextContent'
 // import postMock from 'components/TextContent/mock'
 import { getNews, getNewsVariables } from 'graphql/generated/getNews'
@@ -52,6 +51,16 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     fetchPolicy: 'no-cache'
   })
 
+  const { data: newsSlider } = await apolloClient.query<
+    getNews,
+    getNewsVariables
+  >({
+    query: QUERY_NEWS,
+    variables: {
+      limit: 10
+    }
+  })
+
   if (!data.posts?.data.length) {
     return {
       notFound: true
@@ -61,14 +70,29 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const post = {
     title: data?.posts?.data[0]?.attributes?.title,
     content: `${data?.posts?.data[0]?.attributes?.content}`,
-    subtitle: data?.posts?.data[0]?.attributes?.short_description
+    subtitle: data?.posts?.data[0]?.attributes?.short_description,
+    coverUrl: data?.posts?.data[0]?.attributes?.cover?.data?.attributes?.url,
+    slug: params?.slug
   }
+
+  const news = newsSlider.posts?.data?.map((post) => ({
+    title: post.attributes?.title,
+    description: post.attributes?.short_description,
+    slug: post.attributes?.slug,
+    content: post.attributes?.content,
+    img: `${post.attributes?.cover?.data?.attributes?.url}`,
+    date: new Intl.DateTimeFormat('pt-BR', {
+      day: 'numeric',
+      month: 'short',
+      year: 'numeric'
+    }).format(new Date(post.attributes?.publishedAt))
+  }))
 
   return {
     revalidate: 60 * 60,
     props: {
       post: post,
-      newsSlider: newsSliderMock
+      newsSlider: news
     }
   }
 }

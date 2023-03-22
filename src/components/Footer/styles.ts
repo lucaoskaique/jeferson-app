@@ -24,7 +24,7 @@ export const Column = styled.div`
       color: ${theme.colors.white};
       text-decoration: none;
       margin-bottom: ${theme.spacings.xxsmall};
-      font-size: ${theme.font.sizes.small};
+      font-size: ${theme.font.sizes.medium};
     }
     a {
       word-wrap: break-word;

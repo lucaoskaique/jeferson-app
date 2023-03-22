@@ -6,7 +6,8 @@ import TextContent from '.'
 const props = {
   title: 'Description',
   subtitle: 'Subtitulo',
-  content: `<h1>Content</h1>`
+  content: `<h1>Content</h1>`,
+  coverUrl: '/img/red-dead-img.jpg'
 }
 
 describe('<TextContent />', () => {
@@ -25,7 +26,9 @@ describe('<TextContent />', () => {
   })
 
   it('should render without title', () => {
-    renderWithTheme(<TextContent content={props.content} />)
+    renderWithTheme(
+      <TextContent content={props.content} coverUrl={props.coverUrl} />
+    )
 
     expect(
       screen.queryByRole('heading', { name: /description/i })
@@ -33,7 +36,13 @@ describe('<TextContent />', () => {
   })
 
   it('should render without subtitle', () => {
-    renderWithTheme(<TextContent title={props.title} content={props.content} />)
+    renderWithTheme(
+      <TextContent
+        title={props.title}
+        content={props.content}
+        coverUrl={props.coverUrl}
+      />
+    )
 
     expect(
       screen.queryByRole('heading', { name: /Subtitulo/i })
