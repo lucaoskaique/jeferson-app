@@ -43,7 +43,8 @@ const TextContentMock: TextContentProps = {
   amet consectetur adipisicing elit. Quia praesentium cupiditate tenetur
   quam illum. Fugiat consectetur assumenda in, vitae nemo, eaque quia
   numquam ad perspiciatis doloribus error eveniet quo officia?
-</p>`
+</p>`,
+  coverUrl: 'https://source.unsplash.com/user/willianjusten/1300x649'
 }
 
 export default TextContentMock
