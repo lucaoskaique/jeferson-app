@@ -11,6 +11,7 @@ import { QUERY_HOME } from 'graphql/queries/home'
 import { QUERY_NEWS } from 'graphql/queries/news'
 import Home from 'templates/Home'
 import { initializeApollo } from 'utils/apollo'
+import { getImageUrl } from 'utils/getImageUrl'
 
 export default function Index(props: any) {
   // if (props.data) return <p>{JSON.stringify(props.data, null, 2)}</p>
@@ -48,7 +49,7 @@ export async function getStaticProps() {
     description: post.attributes?.short_description,
     slug: post.attributes?.slug,
     content: post.attributes?.content,
-    img: `${post.attributes?.cover?.data?.attributes?.url}`,
+    img: `${getImageUrl(post.attributes?.cover?.data?.attributes?.url)}`,
     date: new Intl.DateTimeFormat('pt-BR', {
       day: 'numeric',
       month: 'short',
@@ -57,14 +58,17 @@ export async function getStaticProps() {
   }))
 
   const aboutSection = {
-    title: infoData.homePage?.data?.attributes?.sectionAbout.title,
-    img: `${infoData.homePage?.data?.attributes?.sectionAbout.media?.data?.attributes?.url}`,
-    description: infoData.homePage?.data?.attributes?.sectionAbout.description
+    title: infoData.homePage?.data?.attributes?.sectionAbout?.title,
+    img: `${getImageUrl(
+      infoData.homePage?.data?.attributes?.sectionAbout?.media?.data?.attributes
+        ?.url
+    )}`,
+    description: infoData.homePage?.data?.attributes?.sectionAbout?.description
   }
 
   const imageSlider = galeryProps.galeries?.data?.map((galery) => ({
     title: galery.attributes?.title,
-    img: `${galery.attributes?.media?.data[0]?.attributes?.url}`
+    img: `${getImageUrl(galery.attributes?.media?.data[0]?.attributes?.url)}`
   }))
 
   return {

@@ -9,7 +9,7 @@ const Sections = styled.section`
     ${HeadingStyles.Wrapper},
     ${NewsCardSliderStyles.Wrapper},
     ${ImageCardSliderStyles.Wrapper} {
-      margin-bottom: ${theme.spacings.medium};
+      margin-bottom: ${theme.spacings.small};
     }
 
     ${HeadingStyles.Wrapper} {
@@ -23,7 +23,7 @@ export const SectionBanner = styled.section`
     margin-bottom: ${theme.spacings.small};
 
     ${media.greaterThan('medium')`
-      /* margin: 0 0;  
+      /* margin: 0 0;
       position: relative;
       z-index: ${theme.layers.base} */
     `}
@@ -34,7 +34,7 @@ export const SectionHero = styled.section`
     /* margin-bottom: calc(${theme.spacings.xxlarge} * 2); */
 
     ${media.greaterThan('medium')`
-      /* margin: ${theme.spacings.large} 0;  
+      /* margin: ${theme.spacings.large} 0;
       position: relative;
       z-index: ${theme.layers.base} */
     `}
@@ -45,7 +45,7 @@ export const SectionAbout = styled.section`
     margin: ${theme.spacings.large} calc(-${theme.grid.gutter} / 2);
     padding: ${theme.spacings.xsmall};
     ${media.greaterThan('medium')`
-      margin: ${theme.spacings.large} 0;  
+      margin: ${theme.spacings.large} 0;
       position: relative;
       z-index: ${theme.layers.base}
     `}
@@ -56,7 +56,7 @@ export const SectionNews = styled(Sections)`
     margin: ${theme.spacings.large} calc(-${theme.grid.gutter} / 2);
     padding: ${theme.spacings.xsmall};
     ${media.greaterThan('medium')`
-      margin: ${theme.spacings.large} 0;  
+      margin: ${theme.spacings.large} 0;
       position: relative;
       z-index: ${theme.layers.base}
     `}
@@ -71,7 +71,7 @@ export const SectionImages = styled(Sections)`
       margin-bottom: ${theme.spacings.small};
     }
     ${media.greaterThan('medium')`
-      /* margin: ${theme.spacings.large} 0;  
+      /* margin: ${theme.spacings.large} 0;
       position: relative;
       z-index: ${theme.layers.base} */
     `}
@@ -84,7 +84,7 @@ export const SectionFooter = styled.section`
     padding: ${theme.spacings.xsmall};
 
     ${media.greaterThan('medium')`
-      /* margin: 0 0;  
+      /* margin: 0 0;
       position: relative;
       z-index: ${theme.layers.base} */
     `};

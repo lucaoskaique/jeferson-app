@@ -1,16 +1,21 @@
 /* eslint-disable @next/next/no-img-element */
+import Link from 'next/link'
+
 import * as S from './styles'
 
 export type MediaCardProps = {
+  id: number
   title: string
   img: string
 }
 
-const MediaCard = ({ title, img }: MediaCardProps) => (
+const MediaCard = ({ id, title, img }: MediaCardProps) => (
   <S.Wrapper>
-    <S.ImageBox>
-      <img src={img} alt={title} />
-    </S.ImageBox>
+    <Link href={`/galery/${id}`} passHref>
+      <S.ImageBox>
+        <img src={img} alt={title} />
+      </S.ImageBox>
+    </Link>
     <S.Content>
       <S.Info>
         <S.Title>{title}</S.Title>

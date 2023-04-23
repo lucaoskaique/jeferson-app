@@ -47,7 +47,7 @@ export interface getNewsBySlug_posts_data_attributes {
   short_description: string;
   content: string;
   categories: getNewsBySlug_posts_data_attributes_categories | null;
-  cover: getNewsBySlug_posts_data_attributes_cover | null;
+  cover: getNewsBySlug_posts_data_attributes_cover;
   publishedAt: any | null;
 }
 

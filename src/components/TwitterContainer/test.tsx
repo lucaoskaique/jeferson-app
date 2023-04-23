@@ -7,8 +7,7 @@ describe('<TwitterContainer />', () => {
     const { container } = renderWithTheme(<TwitterContainer />)
 
     expect(container.firstChild).toHaveStyle({
-      'max-width': '67rem',
-      'max-height': '60rem',
+      'max-height': '50rem',
       overflow: 'auto'
     })
 

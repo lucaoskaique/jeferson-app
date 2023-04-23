@@ -57,6 +57,7 @@ input IDFilterInput {
   or: [ID]
   not: IDFilterInput
   eq: ID
+  eqi: ID
   ne: ID
   startsWith: ID
   endsWith: ID
@@ -80,6 +81,7 @@ input BooleanFilterInput {
   or: [Boolean]
   not: BooleanFilterInput
   eq: Boolean
+  eqi: Boolean
   ne: Boolean
   startsWith: Boolean
   endsWith: Boolean
@@ -103,6 +105,7 @@ input StringFilterInput {
   or: [String]
   not: StringFilterInput
   eq: String
+  eqi: String
   ne: String
   startsWith: String
   endsWith: String
@@ -126,6 +129,7 @@ input IntFilterInput {
   or: [Int]
   not: IntFilterInput
   eq: Int
+  eqi: Int
   ne: Int
   startsWith: Int
   endsWith: Int
@@ -149,6 +153,7 @@ input FloatFilterInput {
   or: [Float]
   not: FloatFilterInput
   eq: Float
+  eqi: Float
   ne: Float
   startsWith: Float
   endsWith: Float
@@ -172,6 +177,7 @@ input DateTimeFilterInput {
   or: [DateTime]
   not: DateTimeFilterInput
   eq: DateTime
+  eqi: DateTime
   ne: DateTime
   startsWith: DateTime
   endsWith: DateTime
@@ -195,6 +201,7 @@ input JSONFilterInput {
   or: [JSON]
   not: JSONFilterInput
   eq: JSON
+  eqi: JSON
   ne: JSON
   startsWith: JSON
   endsWith: JSON
@@ -223,6 +230,18 @@ type ComponentPageMenu {
   socialLinks(filters: ComponentPageSocialLinksFiltersInput, pagination: PaginationArg = {}, sort: [String] = []): [ComponentPageSocialLinks!]!
 }
 
+input ComponentPageProposalsInput {
+  id: ID
+  title: String
+  content: String
+}
+
+type ComponentPageProposals {
+  id: ID!
+  title: String
+  content: String
+}
+
 input ComponentPageSectionAboutInput {
   id: ID
   title: String
@@ -232,7 +251,7 @@ input ComponentPageSectionAboutInput {
 
 type ComponentPageSectionAbout {
   id: ID!
-  title: String!
+  title: String
   description: String!
   media: UploadFileEntityResponse
 }
@@ -245,8 +264,8 @@ enum ENUM_COMPONENTPAGESOCIALLINKS_TITLE {
 }
 
 input ComponentPageSocialLinksFiltersInput {
-  title: StringFilterInput
   url: StringFilterInput
+  title: StringFilterInput
   and: [ComponentPageSocialLinksFiltersInput]
   or: [ComponentPageSocialLinksFiltersInput]
   not: ComponentPageSocialLinksFiltersInput
@@ -254,14 +273,49 @@ input ComponentPageSocialLinksFiltersInput {
 
 input ComponentPageSocialLinksInput {
   id: ID
-  title: ENUM_COMPONENTPAGESOCIALLINKS_TITLE
   url: String
+  title: ENUM_COMPONENTPAGESOCIALLINKS_TITLE
 }
 
 type ComponentPageSocialLinks {
   id: ID!
-  title: ENUM_COMPONENTPAGESOCIALLINKS_TITLE!
   url: String!
+  title: ENUM_COMPONENTPAGESOCIALLINKS_TITLE!
+}
+
+enum ENUM_COMPONENTSHAREDMETASOCIAL_SOCIALNETWORK {
+  Facebook
+  Twitter
+}
+
+input ComponentSharedMetaSocialFiltersInput {
+  socialNetwork: StringFilterInput
+  title: StringFilterInput
+  description: StringFilterInput
+  and: [ComponentSharedMetaSocialFiltersInput]
+  or: [ComponentSharedMetaSocialFiltersInput]
+  not: ComponentSharedMetaSocialFiltersInput
+}
+
+type ComponentSharedMetaSocial {
+  id: ID!
+  socialNetwork: ENUM_COMPONENTSHAREDMETASOCIAL_SOCIALNETWORK!
+  title: String!
+  description: String!
+  image: UploadFileEntityResponse
+}
+
+type ComponentSharedSeo {
+  id: ID!
+  metaTitle: String!
+  metaDescription: String!
+  metaImage: UploadFileEntityResponse!
+  metaSocial(filters: ComponentSharedMetaSocialFiltersInput, pagination: PaginationArg = {}, sort: [String] = []): [ComponentSharedMetaSocial!]!
+  keywords: String
+  metaRobots: String
+  structuredData: JSON
+  metaViewport: String
+  canonicalURL: String
 }
 
 input UploadFileFiltersInput {
@@ -399,6 +453,38 @@ type UploadFolderRelationResponseCollection {
   data: [UploadFolderEntity!]!
 }
 
+input I18NLocaleFiltersInput {
+  id: IDFilterInput
+  name: StringFilterInput
+  code: StringFilterInput
+  createdAt: DateTimeFilterInput
+  updatedAt: DateTimeFilterInput
+  and: [I18NLocaleFiltersInput]
+  or: [I18NLocaleFiltersInput]
+  not: I18NLocaleFiltersInput
+}
+
+type I18NLocale {
+  name: String
+  code: String
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+type I18NLocaleEntity {
+  id: ID
+  attributes: I18NLocale
+}
+
+type I18NLocaleEntityResponse {
+  data: I18NLocaleEntity
+}
+
+type I18NLocaleEntityResponseCollection {
+  data: [I18NLocaleEntity!]!
+  meta: ResponseCollectionMeta!
+}
+
 input UsersPermissionsPermissionFiltersInput {
   id: IDFilterInput
   action: StringFilterInput
@@ -531,77 +617,6 @@ type UsersPermissionsUserRelationResponseCollection {
   data: [UsersPermissionsUserEntity!]!
 }
 
-input I18NLocaleFiltersInput {
-  id: IDFilterInput
-  name: StringFilterInput
-  code: StringFilterInput
-  createdAt: DateTimeFilterInput
-  updatedAt: DateTimeFilterInput
-  and: [I18NLocaleFiltersInput]
-  or: [I18NLocaleFiltersInput]
-  not: I18NLocaleFiltersInput
-}
-
-type I18NLocale {
-  name: String
-  code: String
-  createdAt: DateTime
-  updatedAt: DateTime
-}
-
-type I18NLocaleEntity {
-  id: ID
-  attributes: I18NLocale
-}
-
-type I18NLocaleEntityResponse {
-  data: I18NLocaleEntity
-}
-
-type I18NLocaleEntityResponseCollection {
-  data: [I18NLocaleEntity!]!
-  meta: ResponseCollectionMeta!
-}
-
-input AudioFiltersInput {
-  id: IDFilterInput
-  title: StringFilterInput
-  createdAt: DateTimeFilterInput
-  updatedAt: DateTimeFilterInput
-  publishedAt: DateTimeFilterInput
-  and: [AudioFiltersInput]
-  or: [AudioFiltersInput]
-  not: AudioFiltersInput
-}
-
-input AudioInput {
-  title: String
-  file: ID
-  publishedAt: DateTime
-}
-
-type Audio {
-  title: String!
-  file: UploadFileEntityResponse!
-  createdAt: DateTime
-  updatedAt: DateTime
-  publishedAt: DateTime
-}
-
-type AudioEntity {
-  id: ID
-  attributes: Audio
-}
-
-type AudioEntityResponse {
-  data: AudioEntity
-}
-
-type AudioEntityResponseCollection {
-  data: [AudioEntity!]!
-  meta: ResponseCollectionMeta!
-}
-
 input CategoryFiltersInput {
   id: IDFilterInput
   name: StringFilterInput
@@ -609,7 +624,6 @@ input CategoryFiltersInput {
   posts: PostFiltersInput
   createdAt: DateTimeFilterInput
   updatedAt: DateTimeFilterInput
-  publishedAt: DateTimeFilterInput
   and: [CategoryFiltersInput]
   or: [CategoryFiltersInput]
   not: CategoryFiltersInput
@@ -619,7 +633,6 @@ input CategoryInput {
   name: String
   slug: String
   posts: [ID]
-  publishedAt: DateTime
 }
 
 type Category {
@@ -628,7 +641,6 @@ type Category {
   posts(filters: PostFiltersInput, pagination: PaginationArg = {}, sort: [String] = [], publicationState: PublicationState = LIVE): PostRelationResponseCollection
   createdAt: DateTime
   updatedAt: DateTime
-  publishedAt: DateTime
 }
 
 type CategoryEntity {
@@ -668,7 +680,7 @@ input GaleryInput {
 
 type Galery {
   title: String!
-  media(filters: UploadFileFiltersInput, pagination: PaginationArg = {}, sort: [String] = []): UploadFileRelationResponseCollection
+  media(filters: UploadFileFiltersInput, pagination: PaginationArg = {}, sort: [String] = []): UploadFileRelationResponseCollection!
   createdAt: DateTime
   updatedAt: DateTime
   publishedAt: DateTime
@@ -692,13 +704,15 @@ input HomePageInput {
   menu: ComponentPageMenuInput
   sectionAbout: ComponentPageSectionAboutInput
   logo: ID
+  proposals: ComponentPageProposalsInput
   publishedAt: DateTime
 }
 
 type HomePage {
   menu: ComponentPageMenu
-  sectionAbout: ComponentPageSectionAbout!
+  sectionAbout: ComponentPageSectionAbout
   logo: UploadFileEntityResponse
+  proposals: ComponentPageProposals
   createdAt: DateTime
   updatedAt: DateTime
   publishedAt: DateTime
@@ -743,8 +757,8 @@ type Post {
   slug: String!
   short_description: String!
   content: String!
-  cover: UploadFileEntityResponse
-  categories(filters: CategoryFiltersInput, pagination: PaginationArg = {}, sort: [String] = [], publicationState: PublicationState = LIVE): CategoryRelationResponseCollection
+  cover: UploadFileEntityResponse!
+  categories(filters: CategoryFiltersInput, pagination: PaginationArg = {}, sort: [String] = []): CategoryRelationResponseCollection
   createdAt: DateTime
   updatedAt: DateTime
   publishedAt: DateTime
@@ -768,132 +782,7 @@ type PostRelationResponseCollection {
   data: [PostEntity!]!
 }
 
-input PublicationFiltersInput {
-  id: IDFilterInput
-  title: StringFilterInput
-  createdAt: DateTimeFilterInput
-  updatedAt: DateTimeFilterInput
-  publishedAt: DateTimeFilterInput
-  and: [PublicationFiltersInput]
-  or: [PublicationFiltersInput]
-  not: PublicationFiltersInput
-}
-
-input PublicationInput {
-  title: String
-  file: ID
-  publishedAt: DateTime
-}
-
-type Publication {
-  title: String!
-  file: UploadFileEntityResponse!
-  createdAt: DateTime
-  updatedAt: DateTime
-  publishedAt: DateTime
-}
-
-type PublicationEntity {
-  id: ID
-  attributes: Publication
-}
-
-type PublicationEntityResponse {
-  data: PublicationEntity
-}
-
-type PublicationEntityResponseCollection {
-  data: [PublicationEntity!]!
-  meta: ResponseCollectionMeta!
-}
-
-input TeamFiltersInput {
-  id: IDFilterInput
-  name: StringFilterInput
-  role: StringFilterInput
-  createdAt: DateTimeFilterInput
-  updatedAt: DateTimeFilterInput
-  publishedAt: DateTimeFilterInput
-  and: [TeamFiltersInput]
-  or: [TeamFiltersInput]
-  not: TeamFiltersInput
-}
-
-input TeamInput {
-  photo: ID
-  name: String
-  role: String
-  socialLinks: [ComponentPageSocialLinksInput]
-  publishedAt: DateTime
-}
-
-type Team {
-  photo: UploadFileEntityResponse!
-  name: String!
-  role: String!
-  socialLinks(filters: ComponentPageSocialLinksFiltersInput, pagination: PaginationArg = {}, sort: [String] = []): [ComponentPageSocialLinks!]!
-  createdAt: DateTime
-  updatedAt: DateTime
-  publishedAt: DateTime
-}
-
-type TeamEntity {
-  id: ID
-  attributes: Team
-}
-
-type TeamEntityResponse {
-  data: TeamEntity
-}
-
-type TeamEntityResponseCollection {
-  data: [TeamEntity!]!
-  meta: ResponseCollectionMeta!
-}
-
-input VideoFiltersInput {
-  id: IDFilterInput
-  title: StringFilterInput
-  link: StringFilterInput
-  createdAt: DateTimeFilterInput
-  updatedAt: DateTimeFilterInput
-  publishedAt: DateTimeFilterInput
-  and: [VideoFiltersInput]
-  or: [VideoFiltersInput]
-  not: VideoFiltersInput
-}
-
-input VideoInput {
-  title: String
-  link: String
-  image: ID
-  publishedAt: DateTime
-}
-
-type Video {
-  title: String!
-  link: String!
-  image: UploadFileEntityResponse!
-  createdAt: DateTime
-  updatedAt: DateTime
-  publishedAt: DateTime
-}
-
-type VideoEntity {
-  id: ID
-  attributes: Video
-}
-
-type VideoEntityResponse {
-  data: VideoEntity
-}
-
-type VideoEntityResponseCollection {
-  data: [VideoEntity!]!
-  meta: ResponseCollectionMeta!
-}
-
-union GenericMorph = ComponentPageMenu | ComponentPageSectionAbout | ComponentPageSocialLinks | UploadFile | UploadFolder | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser | I18NLocale | Audio | Category | Galery | HomePage | Post | Publication | Team | Video
+union GenericMorph = ComponentPageMenu | ComponentPageProposals | ComponentPageSectionAbout | ComponentPageSocialLinks | ComponentSharedMetaSocial | ComponentSharedSeo | UploadFile | UploadFolder | I18NLocale | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser | Category | Galery | HomePage | Post
 
 input FileInfoInput {
   name: String
@@ -962,27 +851,19 @@ type Query {
   uploadFiles(filters: UploadFileFiltersInput, pagination: PaginationArg = {}, sort: [String] = []): UploadFileEntityResponseCollection
   uploadFolder(id: ID): UploadFolderEntityResponse
   uploadFolders(filters: UploadFolderFiltersInput, pagination: PaginationArg = {}, sort: [String] = []): UploadFolderEntityResponseCollection
+  i18NLocale(id: ID): I18NLocaleEntityResponse
+  i18NLocales(filters: I18NLocaleFiltersInput, pagination: PaginationArg = {}, sort: [String] = []): I18NLocaleEntityResponseCollection
   usersPermissionsRole(id: ID): UsersPermissionsRoleEntityResponse
   usersPermissionsRoles(filters: UsersPermissionsRoleFiltersInput, pagination: PaginationArg = {}, sort: [String] = []): UsersPermissionsRoleEntityResponseCollection
   usersPermissionsUser(id: ID): UsersPermissionsUserEntityResponse
   usersPermissionsUsers(filters: UsersPermissionsUserFiltersInput, pagination: PaginationArg = {}, sort: [String] = []): UsersPermissionsUserEntityResponseCollection
-  i18NLocale(id: ID): I18NLocaleEntityResponse
-  i18NLocales(filters: I18NLocaleFiltersInput, pagination: PaginationArg = {}, sort: [String] = []): I18NLocaleEntityResponseCollection
-  audio(id: ID): AudioEntityResponse
-  audios(filters: AudioFiltersInput, pagination: PaginationArg = {}, sort: [String] = [], publicationState: PublicationState = LIVE): AudioEntityResponseCollection
   category(id: ID): CategoryEntityResponse
-  categories(filters: CategoryFiltersInput, pagination: PaginationArg = {}, sort: [String] = [], publicationState: PublicationState = LIVE): CategoryEntityResponseCollection
+  categories(filters: CategoryFiltersInput, pagination: PaginationArg = {}, sort: [String] = []): CategoryEntityResponseCollection
   galery(id: ID): GaleryEntityResponse
   galeries(filters: GaleryFiltersInput, pagination: PaginationArg = {}, sort: [String] = [], publicationState: PublicationState = LIVE): GaleryEntityResponseCollection
   homePage(publicationState: PublicationState = LIVE): HomePageEntityResponse
   post(id: ID): PostEntityResponse
   posts(filters: PostFiltersInput, pagination: PaginationArg = {}, sort: [String] = [], publicationState: PublicationState = LIVE): PostEntityResponseCollection
-  publication(id: ID): PublicationEntityResponse
-  publications(filters: PublicationFiltersInput, pagination: PaginationArg = {}, sort: [String] = [], publicationState: PublicationState = LIVE): PublicationEntityResponseCollection
-  team(id: ID): TeamEntityResponse
-  teams(filters: TeamFiltersInput, pagination: PaginationArg = {}, sort: [String] = [], publicationState: PublicationState = LIVE): TeamEntityResponseCollection
-  video(id: ID): VideoEntityResponse
-  videos(filters: VideoFiltersInput, pagination: PaginationArg = {}, sort: [String] = [], publicationState: PublicationState = LIVE): VideoEntityResponseCollection
   me: UsersPermissionsMe
 }
 
@@ -993,9 +874,6 @@ type Mutation {
   createUploadFolder(data: UploadFolderInput!): UploadFolderEntityResponse
   updateUploadFolder(id: ID!, data: UploadFolderInput!): UploadFolderEntityResponse
   deleteUploadFolder(id: ID!): UploadFolderEntityResponse
-  createAudio(data: AudioInput!): AudioEntityResponse
-  updateAudio(id: ID!, data: AudioInput!): AudioEntityResponse
-  deleteAudio(id: ID!): AudioEntityResponse
   createCategory(data: CategoryInput!): CategoryEntityResponse
   updateCategory(id: ID!, data: CategoryInput!): CategoryEntityResponse
   deleteCategory(id: ID!): CategoryEntityResponse
@@ -1007,15 +885,6 @@ type Mutation {
   createPost(data: PostInput!): PostEntityResponse
   updatePost(id: ID!, data: PostInput!): PostEntityResponse
   deletePost(id: ID!): PostEntityResponse
-  createPublication(data: PublicationInput!): PublicationEntityResponse
-  updatePublication(id: ID!, data: PublicationInput!): PublicationEntityResponse
-  deletePublication(id: ID!): PublicationEntityResponse
-  createTeam(data: TeamInput!): TeamEntityResponse
-  updateTeam(id: ID!, data: TeamInput!): TeamEntityResponse
-  deleteTeam(id: ID!): TeamEntityResponse
-  createVideo(data: VideoInput!): VideoEntityResponse
-  updateVideo(id: ID!, data: VideoInput!): VideoEntityResponse
-  deleteVideo(id: ID!): VideoEntityResponse
   upload(refId: ID, ref: String, field: String, info: FileInfoInput, file: Upload!): UploadFileEntityResponse!
   multipleUpload(refId: ID, ref: String, field: String, files: [Upload]!): [UploadFileEntityResponse]!
   updateFileInfo(id: ID!, info: FileInfoInput): UploadFileEntityResponse!

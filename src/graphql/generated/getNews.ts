@@ -49,7 +49,7 @@ export interface getNews_posts_data_attributes {
   short_description: string;
   content: string;
   categories: getNews_posts_data_attributes_categories | null;
-  cover: getNews_posts_data_attributes_cover | null;
+  cover: getNews_posts_data_attributes_cover;
   publishedAt: any | null;
 }
 

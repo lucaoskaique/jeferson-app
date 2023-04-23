@@ -29,7 +29,7 @@ export interface getNewsById_post_data_attributes {
   slug: string;
   short_description: string;
   content: string;
-  cover: getNewsById_post_data_attributes_cover | null;
+  cover: getNewsById_post_data_attributes_cover;
   publishedAt: any | null;
 }
 

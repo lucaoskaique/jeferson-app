@@ -14,19 +14,14 @@ export const Content = styled.div`
 
   ${media.greaterThan('medium')`
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-  `}
-`
-export const Videos = styled.div`
-  ${media.greaterThan('medium')`
-      width: 50%;
   `}
 `
 export const TwitterBox = styled.div`
   width: 100%;
 
   ${media.greaterThan('medium')`
-    width: 50%;
+    width: 100%;
   `}
 `

@@ -10,6 +10,7 @@ import { GetStaticProps } from 'next'
 import { useRouter } from 'next/router'
 import Post, { PostTemplateProps } from 'templates/Post'
 import { initializeApollo } from 'utils/apollo'
+import { getImageUrl } from 'utils/getImageUrl'
 
 const apolloClient = initializeApollo()
 
@@ -71,7 +72,9 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     title: data?.posts?.data[0]?.attributes?.title,
     content: `${data?.posts?.data[0]?.attributes?.content}`,
     subtitle: data?.posts?.data[0]?.attributes?.short_description,
-    coverUrl: data?.posts?.data[0]?.attributes?.cover?.data?.attributes?.url,
+    coverUrl: `${getImageUrl(
+      data?.posts?.data[0]?.attributes?.cover?.data?.attributes?.url
+    )}`,
     slug: params?.slug
   }
 
@@ -80,7 +83,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     description: post.attributes?.short_description,
     slug: post.attributes?.slug,
     content: post.attributes?.content,
-    img: `${post.attributes?.cover?.data?.attributes?.url}`,
+    img: `${getImageUrl(post.attributes?.cover?.data?.attributes?.url)}`,
     date: new Intl.DateTimeFormat('pt-BR', {
       day: 'numeric',
       month: 'short',

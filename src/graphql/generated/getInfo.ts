@@ -38,15 +38,22 @@ export interface getInfo_homePage_data_attributes_sectionAbout_media {
 
 export interface getInfo_homePage_data_attributes_sectionAbout {
   __typename: "ComponentPageSectionAbout";
-  title: string;
+  title: string | null;
   description: string;
   media: getInfo_homePage_data_attributes_sectionAbout_media | null;
+}
+
+export interface getInfo_homePage_data_attributes_proposals {
+  __typename: "ComponentPageProposals";
+  title: string | null;
+  content: string | null;
 }
 
 export interface getInfo_homePage_data_attributes {
   __typename: "HomePage";
   menu: getInfo_homePage_data_attributes_menu | null;
-  sectionAbout: getInfo_homePage_data_attributes_sectionAbout;
+  sectionAbout: getInfo_homePage_data_attributes_sectionAbout | null;
+  proposals: getInfo_homePage_data_attributes_proposals | null;
 }
 
 export interface getInfo_homePage_data {

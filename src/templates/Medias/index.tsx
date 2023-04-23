@@ -6,26 +6,16 @@ import Base from 'templates/Base'
 import * as S from './styles'
 export type MediasTemplateProps = {
   photos: MediaCardProps[]
-  videos: MediaCardProps[]
-  audios: MediaCardProps[]
-  publications: MediaCardProps[]
 }
-const MediasTemplate = ({
-  photos,
-  videos,
-  audios,
-  publications
-}: MediasTemplateProps) => (
+const MediasTemplate = ({ photos }: MediasTemplateProps) => (
   <Base>
     <S.Cover>
       <S.CoverContent>
         <div>
           <Heading size="large" color="white">
-            Medias
+            Galeria de Fotos
           </Heading>
-          <S.Subtitle>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-          </S.Subtitle>
+          <S.Subtitle>Confira nossa galeria de fotos</S.Subtitle>
         </div>
       </S.CoverContent>
     </S.Cover>
@@ -37,27 +27,6 @@ const MediasTemplate = ({
           ))}
         </Showcase>
       </S.SectionPhotos>
-      <S.SectionVideos>
-        <Showcase title="Videos">
-          {videos.slice(0, 3).map((item, index) => (
-            <MediaCard key={`thumb-${index}`} {...item} />
-          ))}
-        </Showcase>
-      </S.SectionVideos>
-      <S.SectionAudios>
-        <Showcase title="Áudios">
-          {audios.slice(0, 3).map((item, index) => (
-            <MediaCard key={`thumb-${index}`} {...item} />
-          ))}
-        </Showcase>
-      </S.SectionAudios>
-      <S.SectionPublications>
-        <Showcase title="Publicações">
-          {publications.slice(0, 3).map((item, index) => (
-            <MediaCard key={`thumb-${index}`} {...item} />
-          ))}
-        </Showcase>
-      </S.SectionPublications>
     </S.Main>
   </Base>
 )

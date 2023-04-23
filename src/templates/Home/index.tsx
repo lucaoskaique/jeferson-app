@@ -23,7 +23,6 @@ export type HomeTemplateProps = {
 const Home = ({
   banner,
   aboutSection,
-  heroProps,
   newsSlider,
   imageSlider
 }: HomeTemplateProps) => (
@@ -36,17 +35,17 @@ const Home = ({
       />
     </S.SectionBanner>
 
-    <S.SectionHero>
-      <Container>
-        <Hero items={heroProps} />
-      </Container>
-    </S.SectionHero>
-
     <S.SectionAbout>
       <Container>
         <About {...aboutSection} />
       </Container>
     </S.SectionAbout>
+
+    <S.SectionHero>
+      <Container>
+        <Hero />
+      </Container>
+    </S.SectionHero>
 
     <S.SectionNews>
       <Container>

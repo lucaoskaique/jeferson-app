@@ -28,7 +28,7 @@ export interface getGaleries_galeries_data_attributes_media {
 export interface getGaleries_galeries_data_attributes {
   __typename: "Galery";
   title: string;
-  media: getGaleries_galeries_data_attributes_media | null;
+  media: getGaleries_galeries_data_attributes_media;
 }
 
 export interface getGaleries_galeries_data {

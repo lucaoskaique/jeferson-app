@@ -21,7 +21,6 @@ export interface CategoryFiltersInput {
   posts?: PostFiltersInput | null;
   createdAt?: DateTimeFilterInput | null;
   updatedAt?: DateTimeFilterInput | null;
-  publishedAt?: DateTimeFilterInput | null;
   and?: (CategoryFiltersInput | null)[] | null;
   or?: (CategoryFiltersInput | null)[] | null;
   not?: CategoryFiltersInput | null;
@@ -32,6 +31,7 @@ export interface DateTimeFilterInput {
   or?: (any | null)[] | null;
   not?: DateTimeFilterInput | null;
   eq?: any | null;
+  eqi?: any | null;
   ne?: any | null;
   startsWith?: any | null;
   endsWith?: any | null;
@@ -55,6 +55,7 @@ export interface IDFilterInput {
   or?: (string | null)[] | null;
   not?: IDFilterInput | null;
   eq?: string | null;
+  eqi?: string | null;
   ne?: string | null;
   startsWith?: string | null;
   endsWith?: string | null;
@@ -93,6 +94,7 @@ export interface StringFilterInput {
   or?: (string | null)[] | null;
   not?: StringFilterInput | null;
   eq?: string | null;
+  eqi?: string | null;
   ne?: string | null;
   startsWith?: string | null;
   endsWith?: string | null;

@@ -24,6 +24,10 @@ export const QUERY_HOME = gql`
               }
             }
           }
+          proposals {
+            title
+            content
+          }
         }
       }
     }
