@@ -9,6 +9,7 @@ export const Wrapper = styled.section`
     .slick-track,
     .slick-list {
       display: flex;
+      height: 100%;
     }
 
     .slick-slide > div {
@@ -19,11 +20,12 @@ export const Wrapper = styled.section`
 
     .slick-list {
       margin: 0 -${theme.spacings.small};
+      padding: 1rem;
     }
 
     ${media.lessThan('large')`
       .slick-slide > div {
-        margin: 0 ${theme.spacings.small};        
+        margin: 0 ${theme.spacings.small};
       }
 
       .slick-list {

@@ -83,7 +83,7 @@ const Menu = () => {
         <CloseIcon aria-label="Close Menu" onClick={() => setIsOpen(false)} />
         <S.MenuNav>
           <S.MenuLink href="/">Pronunciamentos</S.MenuLink>
-          <S.MenuLink href="/">Propostas</S.MenuLink>
+          <S.MenuLink href="/proposals">Propostas</S.MenuLink>
           <S.MenuLink href="/">Transparência</S.MenuLink>
           <S.MenuLink href="/news">Notícias</S.MenuLink>
           <S.MenuLink href="/medias">Mídias</S.MenuLink>

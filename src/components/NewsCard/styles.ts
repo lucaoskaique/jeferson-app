@@ -55,6 +55,7 @@ export const Content = styled.div`
     justify-content: space-between;
     position: relative;
     margin: ${theme.spacings.xsmall};
+    min-height: 25rem;
   `}
 `
 export const Info = styled.a`
@@ -77,6 +78,7 @@ export const Description = styled.h4`
     font-size: ${theme.font.sizes.small};
     font-weight: ${theme.font.bold};
     color: ${theme.colors.black};
+    min-height: 10rem;
   `}
 `
 export const ReadMoreBox = styled.div`

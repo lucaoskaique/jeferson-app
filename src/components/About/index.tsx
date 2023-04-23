@@ -15,7 +15,7 @@ const About = ({ title, description, img }: AboutProps) => (
     <S.Content>
       <S.Column>
         <S.ImageBox>
-          <ImageCard title={title} img={img} />
+          <ImageCard name={title} img={img} />
         </S.ImageBox>
       </S.Column>
       <S.Column>
@@ -33,10 +33,11 @@ const About = ({ title, description, img }: AboutProps) => (
       <Button size="large" fullWidth background="hot">
         Transparência
       </Button>
-      <Button size="large" fullWidth background="ice">
+      <Button as="a" href="/proposals" size="large" fullWidth>
         Propostas
       </Button>
-      <Button size="large" fullWidth>
+
+      <Button as="a" href="/" size="large" fullWidth>
         Pronunciamentos
       </Button>
     </S.BoxButton>
