@@ -12,10 +12,12 @@ jest.mock('templates/Base', () => ({
 
 const photos = [
   {
+    id: 1,
     title: 'Foto 1',
     img: 'https://picsum.photos/id/1/400/300'
   },
   {
+    id: 1,
     title: 'Foto 2',
     img: 'https://picsum.photos/id/1/400/300'
   }

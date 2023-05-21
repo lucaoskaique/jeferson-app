@@ -4,6 +4,7 @@ import { renderWithTheme } from 'utils/tests/helpers'
 import MediaCard from '.'
 
 const props = {
+  id: 1,
   title: 'DIREITO Á MORADIA',
   img: 'https://source.unsplash.com/user/willianjusten/300x140'
 }
