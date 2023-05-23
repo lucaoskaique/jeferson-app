@@ -29,7 +29,7 @@ export const ImageBox = styled.a`
     #f6f7f8 40%,
     #f6f7f8 100%
   );
-  background-size: 80rem 22rem;
+  background-size: 80rem 14rem;
   animation: placeholderShimmer 1s linear infinite forwards;
 
   img {
@@ -44,7 +44,7 @@ export const ImageBox = styled.a`
     }
 
     100% {
-      background-position: -40rem 0;
+      background-position: 40rem 0;
     }
   }
 `
@@ -54,8 +54,8 @@ export const Content = styled.div`
     flex-direction: column;
     justify-content: space-between;
     position: relative;
+    height: 100%;
     margin: ${theme.spacings.xsmall};
-    min-height: 25rem;
   `}
 `
 export const Info = styled.a`
@@ -78,7 +78,7 @@ export const Description = styled.h4`
     font-size: ${theme.font.sizes.small};
     font-weight: ${theme.font.bold};
     color: ${theme.colors.black};
-    min-height: 10rem;
+    /* min-height: 10rem; */
   `}
 `
 export const ReadMoreBox = styled.div`

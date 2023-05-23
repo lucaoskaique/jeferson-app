@@ -12,12 +12,13 @@ export type NewsCardSliderProps = {
 const settings: SliderSettings = {
   dots: true,
   slidesToShow: 3,
-  infinite: true,
+  infinite: false,
   lazyLoad: 'ondemand',
   responsive: [
     {
       breakpoint: 1375,
       settings: {
+        infinite: true,
         arrows: false,
         slidesToShow: 2
       }

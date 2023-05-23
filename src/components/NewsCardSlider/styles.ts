@@ -9,27 +9,26 @@ export const Wrapper = styled.section`
     .slick-track,
     .slick-list {
       display: flex;
-      height: 100%;
+      padding: ${theme.spacings.small} 0;
     }
 
     .slick-slide > div {
-      margin: 0 ${theme.spacings.small};
+      margin: 0 ${theme.spacings.xxsmall};
       flex: 1 0 auto;
       height: 100%;
     }
 
     .slick-list {
-      margin: 0 -${theme.spacings.small};
-      padding: 1rem;
+      margin: 0 -${theme.spacings.xxsmall};
     }
 
-    ${media.lessThan('large')`
+    ${media.greaterThan('large')`
       .slick-slide > div {
-        margin: 0 ${theme.spacings.small};
+        margin: 0 ${theme.spacings.xsmall};
       }
 
       .slick-list {
-        margin: 0 -${theme.spacings.small};
+        margin: 0 -${theme.spacings.xsmall};
       }
     `}
 
